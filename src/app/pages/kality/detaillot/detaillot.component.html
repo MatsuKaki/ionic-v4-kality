@@ -1,0 +1,178 @@
+<ion-header>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Operation 1 - A001 - 2 Pieces - Frederic JAILLARD</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-split-pane contentId="main-content">
+  <ion-menu side="start" content-id="main-content" type="overlay">
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Hidden by external Title</ion-title>
+      </ion-toolbar>
+      <ion-toolbar translucent>
+        <ion-title>Edition de reserve</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Piece</ion-label>
+          <ionic-selectable
+            [(ngModel)]="piece"
+            [items]="matchingPieces"
+            itemValueField="id"
+            itemTextField="name"
+            [canSearch]="true"
+            (onChange)="pieceChange($event)"
+            (onSearch)="searchPieces($event)"
+          ></ionic-selectable>
+        </ion-item>
+        <ion-item>
+          <ion-label>Statut</ion-label>
+          <ion-select interface="popover">
+            <ion-select-option value="En cours">En cours</ion-select-option>
+            <ion-select-option value="OK MOE">OK MOE</ion-select-option>
+            <ion-select-option value="Levee">Levee</ion-select-option>
+            <ion-select-option value="Annulee">Annulee</ion-select-option>
+            <ion-select-option value="Refusee">Refusee</ion-select-option>
+            <ion-select-option value="Mise en Demeure"
+              >Mise en Demeure</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Description</ion-label>
+          <ion-textarea
+            #testArea
+            placeholder="Description"
+            rows="3"
+          ></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-label>Corps d'etat</ion-label>
+          <ion-input placeholder="Corps d'etat"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Entreprise</ion-label>
+          <ion-input placeholder="Entreprise"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Informations Additionnelles</ion-label>
+          <ion-textarea
+            placeholder="Informations Additionnelles"
+            rows="3"
+          ></ion-textarea>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Hidden by external Title</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content padding>
+      <ion-slides
+        #swiper
+        pager="true"
+        [options]="slideOpts"
+        (ionSlideDidChange)="onSlideChange()"
+        zoom="true"
+      >
+        <ion-slide>
+          <div class="swiper-zoom-container">
+            <img
+              src="https://www.terrain-construction.com/content/wp-content/uploads/2018/06/1-Stella-Lara-min-1-1024x650.jpg"
+            />
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="swiper-zoom-container">
+            <img src="https://mhartington.io/img/v4-upgrade/ionic-icon.png" />
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="swiper-zoom-container">
+            <img src="https://mhartington.io/img/v4-upgrade/ionic-icon.png" />
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </ion-content>
+  </div>
+</ion-split-pane>
+
+<ion-footer>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="kality/lotlist"
+        text="Retour"
+        icon="arrow-back"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <div>
+          <font size="1">Temoin<br />technique</font>
+        </div>
+      </ion-button>
+      <ion-button>
+        <div>
+          <font size="1">Pre-<br />visite</font>
+        </div>
+      </ion-button>
+      <ion-button>
+        <div>
+          <font size="1">VAC</font>
+        </div>
+      </ion-button>
+      <ion-button>
+        <div>
+          <font size="1">OPR</font>
+        </div>
+      </ion-button>
+      <ion-button>
+        <div>
+          <font size="1">Pre-<br />Livraison</font>
+        </div>
+      </ion-button>
+      <ion-button>
+        <div>
+          <font size="1">OPL</font>
+        </div>
+      </ion-button>
+      <ion-button>
+        <div>
+          <font size="1">Mise<br />a disposition</font>
+        </div>
+      </ion-button>
+      <ion-button>
+        <div>
+          <font size="1">Etat<br />des lieux</font>
+        </div>
+      </ion-button>
+      <ion-button>
+        <div>
+          <font size="1">Production</font>
+        </div>
+      </ion-button>
+      <ion-button>
+        <div>
+          <font size="1">Visite<br />a 30 J</font>
+        </div>
+      </ion-button>
+      <ion-button>
+        <div>
+          <font size="1">GPA</font>
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-title>Operation 1</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar fill="solid" color="primary">
+    <ion-title>13 rue du chat qui peche</ion-title>
+    <ion-title>75005 Paris</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-tabs>
+    <ion-tab-bar slot="top">
+      <ion-tab-button tab="batimentA">
+        <ion-label>Batiment A</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="batimentB">
+        <ion-label>Batiment B</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="batimentC">
+        <ion-label>Batiment C</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="kality" text="Retour" icon="arrow-back">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button fill="solid" (click)="onSynchronize()">
+        <ion-icon slot="end" name="refresh"></ion-icon>
+        Synchronisation
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
