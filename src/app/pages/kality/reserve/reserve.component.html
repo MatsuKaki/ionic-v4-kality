@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Operation 1 - A001 - 2 Pieces - Frederic JAILLARD</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-sm="4">
+          <ion-list>
+      <ion-item>
+        <ion-label>Piece</ion-label>
+        <ionic-selectable
+          [(ngModel)]="piece"
+          [items]="matchingPieces"
+          itemValueField="id"
+          itemTextField="name"
+          [canSearch]="true"
+          (onChange)="pieceChange($event)"
+          (onSearch)="searchPieces($event)"
+        ></ionic-selectable>
+      </ion-item>
+      <ion-item>
+        <ion-label>Statut</ion-label>
+        <ion-select interface="popover">
+          <ion-select-option value="En cours">En cours</ion-select-option>
+          <ion-select-option value="OK MOE">OK MOE</ion-select-option>
+          <ion-select-option value="Levee">Levee</ion-select-option>
+          <ion-select-option value="Annulee">Annulee</ion-select-option>
+          <ion-select-option value="Refusee">Refusee</ion-select-option>
+          <ion-select-option value="Mise en Demeure"
+            >Mise en Demeure</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Description</ion-label>
+        <ion-textarea
+          #testArea
+          placeholder="Description"
+          rows="3"
+        ></ion-textarea>
+      </ion-item>
+      <ion-item-divider color="secondary">
+        <ion-label slot="start">
+          Intervenants
+        </ion-label>
+        <ion-label slot="end">Limiter</ion-label>
+        <ion-checkbox
+          slot="end"
+          [(ngModel)]="carnetDAdresseOnly"
+        ></ion-checkbox>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Corps d'etat</ion-label>
+        <ionic-selectable
+          [(ngModel)]="corpsDEtat"
+          [items]="matchingCorpsDEtat"
+          itemValueField="id"
+          itemTextField="name"
+          [canSearch]="true"
+          (onChange)="corpsDEtatChange($event)"
+          (onSearch)="searchCorpsDEtat($event)"
+        ></ionic-selectable>
+      </ion-item>
+      <ion-item>
+        <ion-label>Entreprise</ion-label>
+        <ion-select interface="popover" [(ngModel)]="entreprise">
+          <ion-select-option
+            *ngFor="let entreprise of matchingEntreprises"
+            [value]="entreprise"
+            >{{entreprise.name}}</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+      <ion-item-divider color="secondary">
+        <ion-label>
+          Informations Additionnelles
+        </ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-textarea
+          placeholder="Informations Additionnelles"
+          rows="3"
+        ></ion-textarea>
+      </ion-item>
+    </ion-list>
+        </ion-col>
+        <ion-col size="12" size-sm="8">
+          <ion-slides #swiper pager="false" [options]="slideOpts" zoom="true">
+            <ion-slide>
+              <div class="swiper-zoom-container">
+                <img
+                  src="https://www.terrain-construction.com/content/wp-content/uploads/2018/06/1-Stella-Lara-min-1-1024x650.jpg"
+                />
+              </div>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
+<ion-footer>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="kality/detaillot"
+        text="Retour"
+        icon="arrow-back"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        Photo
+      </ion-button>
+      <ion-button>
+        Sauver
+      </ion-button>
+      <ion-button>
+        Supprimer
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

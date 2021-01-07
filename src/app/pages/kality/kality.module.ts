@@ -7,6 +7,7 @@ import { IonicSelectableModule } from "ionic-selectable";
 
 import { OperationComponent } from "./operation/operation.component";
 import { DetailLotComponent } from "./detaillot/detaillot.component";
+import { ReserveComponent } from "./reserve/reserve.component";
 
 @NgModule({
   imports: [
@@ -26,9 +27,13 @@ import { DetailLotComponent } from "./detaillot/detaillot.component";
       {
         path: "detaillot",
         component: DetailLotComponent
+      },
+      {
+        path: "reserve",
+        component: ReserveComponent
       }
     ])
   ],
-  declarations: [OperationComponent, DetailLotComponent]
+  declarations: [OperationComponent, DetailLotComponent, ReserveComponent]
 })
 export class KalityModule {}

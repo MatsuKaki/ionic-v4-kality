@@ -7,131 +7,50 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-split-pane contentId="main-content">
-  <ion-menu side="start" content-id="main-content" type="overlay">
-    <ion-header>
-      <ion-toolbar translucent>
-        <ion-title>Edition de reserve</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-item>
-          <ion-label>Piece</ion-label>
-          <ionic-selectable
-            [(ngModel)]="piece"
-            [items]="matchingPieces"
-            itemValueField="id"
-            itemTextField="name"
-            [canSearch]="true"
-            (onChange)="pieceChange($event)"
-            (onSearch)="searchPieces($event)"
-          ></ionic-selectable>
-        </ion-item>
-        <ion-item>
-          <ion-label>Statut</ion-label>
-          <ion-select interface="popover">
-            <ion-select-option value="En cours">En cours</ion-select-option>
-            <ion-select-option value="OK MOE">OK MOE</ion-select-option>
-            <ion-select-option value="Levee">Levee</ion-select-option>
-            <ion-select-option value="Annulee">Annulee</ion-select-option>
-            <ion-select-option value="Refusee">Refusee</ion-select-option>
-            <ion-select-option value="Mise en Demeure"
-              >Mise en Demeure</ion-select-option
-            >
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stacked">Description</ion-label>
-          <ion-textarea
-            #testArea
-            placeholder="Description"
-            rows="3"
-          ></ion-textarea>
-        </ion-item>
-        <ion-item-divider color="secondary">
-          <ion-label slot="start">
-            Intervenants
-          </ion-label>
-          <ion-label slot="end">Limiter</ion-label>
-          <ion-checkbox
-            slot="end"
-            [(ngModel)]="carnetDAdresseOnly"
-          ></ion-checkbox>
-        </ion-item-divider>
-        <ion-item>
-          <ion-label>Corps d'etat</ion-label>
-          <ionic-selectable
-            [(ngModel)]="corpsDEtat"
-            [items]="matchingCorpsDEtat"
-            itemValueField="id"
-            itemTextField="name"
-            [canSearch]="true"
-            (onChange)="corpsDEtatChange($event)"
-            (onSearch)="searchCorpsDEtat($event)"
-          ></ionic-selectable>
-        </ion-item>
-        <ion-item>
-          <ion-label>Entreprise</ion-label>
-          <ion-select interface="popover" [(ngModel)]="entreprise">
-            <ion-select-option
-              *ngFor="let entreprise of matchingEntreprises"
-              [value]="entreprise"
-              >{{entreprise.name}}</ion-select-option
-            >
-          </ion-select>
-        </ion-item>
-        <ion-item-divider color="secondary">
-          <ion-label>
-            Informations Additionnelles
-          </ion-label>
-        </ion-item-divider>
-        <ion-item>
-          <ion-textarea
-            placeholder="Informations Additionnelles"
-            rows="3"
-          ></ion-textarea>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-
-  <div class="ion-page" id="main-content">
-    <ion-header>
-      <ion-toolbar translucent>
-        <ion-title>Hidden by external Title</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content padding>
-      <ion-slides
-        #swiper
-        pager="true"
-        [options]="slideOpts"
-        (ionSlideDidChange)="onSlideChange()"
-        zoom="true"
-      >
-        <ion-slide>
-          <div class="swiper-zoom-container">
-            <img
-              src="https://www.terrain-construction.com/content/wp-content/uploads/2018/06/1-Stella-Lara-min-1-1024x650.jpg"
-            />
-          </div>
-        </ion-slide>
-        <ion-slide>
-          <div class="swiper-zoom-container">
-            <img src="https://mhartington.io/img/v4-upgrade/ionic-icon.png" />
-          </div>
-        </ion-slide>
-        <ion-slide>
-          <div class="swiper-zoom-container">
-            <img src="https://mhartington.io/img/v4-upgrade/ionic-icon.png" />
-          </div>
-        </ion-slide>
-      </ion-slides>
-    </ion-content>
+<ion-content padding>
+  <div
+    *ngFor="let item of reserves; let i = index"
+    [style.top.px]="item.x"
+    [style.left.px]="item.y"
+    style="position: absolute;z-index:2"
+  >
+    <ion-button
+      slot="icon-only"
+      shape="round"
+      fill="clear"
+      size="small"
+      (click)="openReserve(item)"
+    >
+      <ion-icon name="add-circle-outline" color="primary"></ion-icon>
+    </ion-button>
+    <ion-label>{{ item.viewtype }} - {{ item.id }}</ion-label>
   </div>
-</ion-split-pane>
+  <ion-slides
+    #swiper
+    pager="true"
+    [options]="slideOpts"
+    (ionSlideDidChange)="onSlideChange()"
+    zoom="true"
+  >
+    <ion-slide>
+      <div class="swiper-zoom-container">
+        <img
+          src="https://www.terrain-construction.com/content/wp-content/uploads/2018/06/1-Stella-Lara-min-1-1024x650.jpg"
+        />
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="swiper-zoom-container">
+        <img src="https://mhartington.io/img/v4-upgrade/ionic-icon.png" />
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="swiper-zoom-container">
+        <img src="https://mhartington.io/img/v4-upgrade/ionic-icon.png" />
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
 
 <ion-footer>
   <ion-toolbar fill="solid" color="primary">

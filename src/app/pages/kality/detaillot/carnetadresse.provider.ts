@@ -4,7 +4,7 @@ export class CorpsDEtat {
   public weigth: number;
 }
 
-let corpsDEtats: CorpsDEtat[] = [
+export let corpsDEtats: CorpsDEtat[] = [
   { id: 108, name: "PEINTURE & PAPIER PEINT", weigth: 42244 },
   { id: 120, name: "PLOMBERIE-SANITAIRES-VMC", weigth: 23514 },
   { id: 93, name: "MENUISERIE INTERIEURE", weigth: 21716 },
@@ -138,7 +138,7 @@ export class Entreprise {
   public name: string;
 }
 
-let entreprises: Entreprise[] = [
+export let entreprises: Entreprise[] = [
   { id: 1, name: "Entreprise de peinture" },
   { id: 2, name: "Entreprise de carrelage" },
   { id: 3, name: "Entreprise ACME" },
@@ -151,21 +151,20 @@ export class LigneCarnetAdresse {
   public entreprise: Entreprise;
 }
 
+export let carnetAdresse: LigneCarnetAdresse[] = [
+  { id: 1, corpsDEtat: corpsDEtats[0], entreprise: entreprises[0] },
+  { id: 2, corpsDEtat: corpsDEtats[5], entreprise: entreprises[0] },
+  { id: 3, corpsDEtat: corpsDEtats[0], entreprise: entreprises[2] },
+  { id: 4, corpsDEtat: corpsDEtats[5], entreprise: entreprises[2] },
+  { id: 5, corpsDEtat: corpsDEtats[6], entreprise: entreprises[3] },
+  { id: 6, corpsDEtat: corpsDEtats[6], entreprise: entreprises[2] },
+  { id: 7, corpsDEtat: corpsDEtats[11], entreprise: entreprises[1] }
+];
+
 export class CarnetDAdresseProvider {
-  carnetAdresse: LigneCarnetAdresse[];
   limiterAuCarnet: boolean = true;
 
-  constructor() {
-    this.carnetAdresse = [
-      { id: 1, corpsDEtat: corpsDEtats[0], entreprise: entreprises[0] },
-      { id: 2, corpsDEtat: corpsDEtats[5], entreprise: entreprises[0] },
-      { id: 3, corpsDEtat: corpsDEtats[0], entreprise: entreprises[2] },
-      { id: 4, corpsDEtat: corpsDEtats[5], entreprise: entreprises[2] },
-      { id: 5, corpsDEtat: corpsDEtats[6], entreprise: entreprises[3] },
-      { id: 6, corpsDEtat: corpsDEtats[6], entreprise: entreprises[2] },
-      { id: 7, corpsDEtat: corpsDEtats[11], entreprise: entreprises[1] }
-    ];
-  }
+  constructor() {}
 
   onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
@@ -175,7 +174,7 @@ export class CarnetDAdresseProvider {
     console.log(this.limiterAuCarnet);
     let matchingCorpsDEtat: CorpsDEtat[];
     if (this.limiterAuCarnet) {
-      matchingCorpsDEtat = this.carnetAdresse
+      matchingCorpsDEtat = carnetAdresse
         .map(x => x.corpsDEtat)
         .filter(this.onlyUnique)
         .filter((a, b, c) => this.matchesCorpsDEtat(a, b, c, text));
@@ -218,7 +217,7 @@ export class CarnetDAdresseProvider {
 
   filterEntreprise(corpsDEtat: CorpsDEtat) {
     let matchingEntreprises: Entreprise[] = [];
-    for (var currLigne of this.carnetAdresse) {
+    for (var currLigne of carnetAdresse) {
       if (currLigne.corpsDEtat.id == corpsDEtat.id) {
         matchingEntreprises.push(currLigne.entreprise);
       }
