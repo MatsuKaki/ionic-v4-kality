@@ -25,13 +25,14 @@ export class ReserveComponent {
   carnetDAdresseOnly = true;
 
   slideOpts = {
-    initialSlide: 0,
-    speed: 400,
     autoHeight: true,
+    borderRadius: "5px",
     zoom: {
       maxRatio: 4
     }
-  };constructor(private route: ActivatedRoute) {
+  };
+
+  constructor(private route: ActivatedRoute) {
     this.pieceProvider = new PieceProvider();
     this.matchingPieces = this.pieceProvider.filter("");
     this.carnetAdresseProvider = new CarnetDAdresseProvider();
@@ -39,7 +40,7 @@ export class ReserveComponent {
 
     if (route.snapshot.paramMap.get("id")) {
       console.log("Reserve " + route.snapshot.paramMap.get("id"));
-      this.reserve = reserves[route.snapshot.paramMap.get("id")];
+      this.reserve = reserves[route.snapshot.paramMap.get("id") - 1];
       console.log("Found Reserve " + this.reserve);
       if (this.reserve.corpsDEtat) {
         this.matchingEntreprises = this.carnetAdresseProvider.filterEntreprise(
