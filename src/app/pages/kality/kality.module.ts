@@ -29,7 +29,7 @@ import { ReserveComponent } from "./reserve/reserve.component";
         component: DetailLotComponent
       },
       {
-        path: "reserve",
+        path: "reserve/:id",
         component: ReserveComponent
       }
     ])

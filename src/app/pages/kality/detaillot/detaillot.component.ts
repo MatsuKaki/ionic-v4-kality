@@ -1,5 +1,5 @@
 import { ViewChild, Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { NavigationExtras, Router } from "@angular/router";
 import { IonSlides } from "@ionic/angular";
 import { Reserve, reserves } from "./reserve.provider";
 import { Piece } from "./pieces.provider";
@@ -35,7 +35,7 @@ export class DetailLotComponent {
     });
   }
 
-  openReserve(reserve) {
-    this.router.navigate(["kality/reserve"]);
+  openReserve(reserve: Reserve) {
+    this.router.navigate(["kality/reserve/" + reserve.id]);
   }
 }

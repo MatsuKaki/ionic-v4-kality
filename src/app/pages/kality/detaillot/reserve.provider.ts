@@ -14,6 +14,8 @@ export class Reserve {
   piece: Piece;
   corpsDEtat: CorpsDEtat;
   entreprise: Entreprise;
+  infoAdditionnelles: string;
+  description: string;
 }
 
 export let reserves: Reserve[] = [
@@ -22,29 +24,35 @@ export let reserves: Reserve[] = [
     viewtype: "A",
     x: 265,
     y: 265,
-    statut: "En Cours",
+    statut: "En cours",
     piece: pieces[0],
     corpsDEtat: carnetAdresse[0].corpsDEtat,
-    entreprise: carnetAdresse[0].entreprise
+    entreprise: carnetAdresse[0].entreprise,
+    infoAdditionnelles: "info add 1",
+    description: "Description blabla 1"
   },
   {
     id: 2,
     viewtype: "B",
     x: 125,
     y: 265,
-    statut: "En Cours",
+    statut: "En cours",
     piece: pieces[1],
     corpsDEtat: carnetAdresse[1].corpsDEtat,
-    entreprise: carnetAdresse[1].entreprise
+    entreprise: carnetAdresse[1].entreprise,
+    infoAdditionnelles: "info add 2",
+    description: "Description blabla 2"
   },
   {
     id: 3,
     viewtype: "C",
     x: 265,
     y: 450,
-    statut: "En Cours",
+    statut: "Levee",
     piece: pieces[2],
     corpsDEtat: carnetAdresse[2].corpsDEtat,
-    entreprise: carnetAdresse[2].entreprise
+    entreprise: carnetAdresse[2].entreprise,
+    infoAdditionnelles: "info add 3",
+    description: "Description blabla 3"
   }
 ];

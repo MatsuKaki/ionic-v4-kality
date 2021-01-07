@@ -1,9 +1,8 @@
-import { ViewChild, Component } from "@angular/core";
-import { Router } from "@angular/router";
-import { IonSelect, IonSlides } from "@ionic/angular";
-import { MenuController } from "@ionic/angular";
+import { Component } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 import { IonicSelectableComponent } from "ionic-selectable";
 import { Piece, PieceProvider } from "../detaillot/pieces.provider";
+import { Reserve, reserves } from "../detaillot/reserve.provider";
 import {
   CarnetDAdresseProvider,
   CorpsDEtat,
@@ -15,23 +14,39 @@ import {
   templateUrl: "./reserve.component.html"
 })
 export class ReserveComponent {
-  piece: Piece;
+  reserve: Reserve;
   pieceProvider: PieceProvider;
   matchingPieces: Piece[];
 
-  corpsDEtat: CorpsDEtat;
   carnetAdresseProvider: CarnetDAdresseProvider;
   matchingCorpsDEtat: CorpsDEtat[];
 
-  entreprise: Entreprise;
   matchingEntreprises: Entreprise[];
   carnetDAdresseOnly = true;
 
-  constructor() {
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400,
+    autoHeight: true,
+    zoom: {
+      maxRatio: 4
+    }
+  };constructor(private route: ActivatedRoute) {
     this.pieceProvider = new PieceProvider();
     this.matchingPieces = this.pieceProvider.filter("");
     this.carnetAdresseProvider = new CarnetDAdresseProvider();
     this.matchingCorpsDEtat = this.carnetAdresseProvider.filterCorpsDEtat("");
+
+    if (route.snapshot.paramMap.get("id")) {
+      console.log("Reserve " + route.snapshot.paramMap.get("id"));
+      this.reserve = reserves[route.snapshot.paramMap.get("id")];
+      console.log("Found Reserve " + this.reserve);
+      if (this.reserve.corpsDEtat) {
+        this.matchingEntreprises = this.carnetAdresseProvider.filterEntreprise(
+          this.reserve.corpsDEtat
+        );
+      }
+    }
   }
 
   pieceChange(event: { component: IonicSelectableComponent; value: any }) {
@@ -50,12 +65,12 @@ export class ReserveComponent {
 
   corpsDEtatChange(event: { component: IonicSelectableComponent; value: any }) {
     console.log("selected corps d'etat:", event.value);
-    this.entreprise = null;
+    this.reserve.entreprise = null;
     this.matchingEntreprises = this.carnetAdresseProvider.filterEntreprise(
       event.value
     );
     if (this.matchingEntreprises.length > 0) {
-      this.entreprise = this.matchingEntreprises[0];
+      this.reserve.entreprise = this.matchingEntreprises[0];
     }
     console.log("matching entreprises:", this.matchingEntreprises);
   }
