@@ -11,9 +11,6 @@
   <ion-menu side="start" content-id="main-content" type="overlay">
     <ion-header>
       <ion-toolbar translucent>
-        <ion-title>Hidden by external Title</ion-title>
-      </ion-toolbar>
-      <ion-toolbar translucent>
         <ion-title>Edition de reserve</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -52,16 +49,44 @@
             rows="3"
           ></ion-textarea>
         </ion-item>
+        <ion-item-divider color="secondary">
+          <ion-label slot="start">
+            Intervenants
+          </ion-label>
+          <ion-label slot="end">Limiter</ion-label>
+          <ion-checkbox
+            slot="end"
+            [(ngModel)]="carnetDAdresseOnly"
+          ></ion-checkbox>
+        </ion-item-divider>
         <ion-item>
           <ion-label>Corps d'etat</ion-label>
-          <ion-input placeholder="Corps d'etat"></ion-input>
+          <ionic-selectable
+            [(ngModel)]="corpsDEtat"
+            [items]="matchingCorpsDEtat"
+            itemValueField="id"
+            itemTextField="name"
+            [canSearch]="true"
+            (onChange)="corpsDEtatChange($event)"
+            (onSearch)="searchCorpsDEtat($event)"
+          ></ionic-selectable>
         </ion-item>
         <ion-item>
           <ion-label>Entreprise</ion-label>
-          <ion-input placeholder="Entreprise"></ion-input>
+          <ion-select interface="popover" [(ngModel)]="entreprise">
+            <ion-select-option
+              *ngFor="let entreprise of matchingEntreprises"
+              [value]="entreprise"
+              >{{entreprise.name}}</ion-select-option
+            >
+          </ion-select>
         </ion-item>
+        <ion-item-divider color="secondary">
+          <ion-label>
+            Informations Additionnelles
+          </ion-label>
+        </ion-item-divider>
         <ion-item>
-          <ion-label position="stacked">Informations Additionnelles</ion-label>
           <ion-textarea
             placeholder="Informations Additionnelles"
             rows="3"

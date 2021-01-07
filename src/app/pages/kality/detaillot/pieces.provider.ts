@@ -114,13 +114,13 @@ export class PieceProvider {
     return matchingPieces;
   }
 
-  matches(element, index, array, text) {
+  private matches(element, index, array, text) {
     let result: number;
     result = element.name.indexOf(text);
     return result > -1;
   }
 
-  sortWeight(obj1: Piece, obj2: Piece) {
+  private sortWeight(obj1: Piece, obj2: Piece) {
     let result: number = 1;
     if (obj1.weigth > obj2.weigth) {
       result = -1;
@@ -130,7 +130,7 @@ export class PieceProvider {
     return result;
   }
 
-  sortName(obj1: Piece, obj2: Piece) {
+  private sortName(obj1: Piece, obj2: Piece) {
     let result: number = 1;
     if (obj1.name < obj2.name) {
       result = -1;
