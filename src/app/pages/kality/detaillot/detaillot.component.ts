@@ -13,7 +13,6 @@ export class DetailLotComponent {
   slideOpts = {
     initialSlide: 0,
     speed: 400,
-    autoHeight: true,
     zoom: {
       maxRatio: 4
     }

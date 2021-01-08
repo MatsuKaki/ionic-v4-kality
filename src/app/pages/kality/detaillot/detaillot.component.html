@@ -8,23 +8,6 @@
 </ion-header>
 
 <ion-content padding>
-  <div
-    *ngFor="let item of reserves; let i = index"
-    [style.top.px]="item.x"
-    [style.left.px]="item.y"
-    style="position: fi;z-index:2"
-  >
-    <ion-button
-      slot="icon-only"
-      shape="round"
-      fill="clear"
-      size="small"
-      (click)="openReserve(item)"
-    >
-      <ion-icon name="add-circle-outline" color="primary"></ion-icon>
-    </ion-button>
-    <ion-label>{{ item.viewtype }} - {{ item.id }}</ion-label>
-  </div>
   <ion-slides
     #swiper
     pager="true"
@@ -34,6 +17,23 @@
   >
     <ion-slide>
       <div class="swiper-zoom-container">
+        <div
+          *ngFor="let item of reserves; let i = index"
+          [style.top.%]="item.y"
+          [style.left.%]="item.x"
+          style="position: fixed;z-index:2"
+        >
+          <ion-button
+            slot="icon-only"
+            shape="round"
+            fill="clear"
+            size="small"
+            (click)="openReserve(item)"
+          >
+            <ion-icon name="add-circle-outline" color="primary"></ion-icon>
+          </ion-button>
+          <ion-label>{{ item.viewtype }} - {{ item.id }}</ion-label>
+        </div>
         <img
           src="https://www.terrain-construction.com/content/wp-content/uploads/2018/06/1-Stella-Lara-min-1-1024x650.jpg"
         />

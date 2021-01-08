@@ -22,8 +22,8 @@ export let reserves: Reserve[] = [
   {
     id: 1,
     viewtype: "A",
-    x: 265,
-    y: 265,
+    x: 23,
+    y: 25,
     statut: "En cours",
     piece: pieces[0],
     corpsDEtat: carnetAdresse[0].corpsDEtat,
@@ -34,8 +34,8 @@ export let reserves: Reserve[] = [
   {
     id: 2,
     viewtype: "B",
-    x: 125,
-    y: 265,
+    x: 50,
+    y: 50,
     statut: "En cours",
     piece: pieces[1],
     corpsDEtat: carnetAdresse[1].corpsDEtat,
@@ -46,8 +46,8 @@ export let reserves: Reserve[] = [
   {
     id: 3,
     viewtype: "C",
-    x: 265,
-    y: 450,
+    x: 33,
+    y: 70,
     statut: "Levee",
     piece: pieces[2],
     corpsDEtat: carnetAdresse[2].corpsDEtat,
