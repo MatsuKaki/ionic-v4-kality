@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { IonicModule } from "@ionic/angular";
+import { DragDropModule } from "@angular/cdk/drag-drop";
 import { RouterModule } from "@angular/router";
 import { IonicSelectableModule } from "ionic-selectable";
 
@@ -15,6 +16,7 @@ import { ReserveComponent } from "./reserve/reserve.component";
     FormsModule,
     IonicModule,
     IonicSelectableModule,
+    DragDropModule,
     RouterModule.forChild([
       {
         path: "",

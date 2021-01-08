@@ -26,7 +26,6 @@ export class ReserveComponent {
   carnetDAdresseOnly = true;
 
   slideOpts = {
-    autoHeight: true,
     borderRadius: "5px",
     zoom: {
       maxRatio: 4
