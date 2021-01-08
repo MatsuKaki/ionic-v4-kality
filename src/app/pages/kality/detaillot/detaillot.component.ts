@@ -7,7 +7,8 @@ import { CorpsDEtat, Entreprise } from "./carnetadresse.provider";
 
 @Component({
   selector: "detaillot-component",
-  templateUrl: "./detaillot.component.html"
+  templateUrl: "./detaillot.component.html",
+  styleUrls: ["./detaillot.component.scss"]
 })
 export class DetailLotComponent {
   slideOpts = {

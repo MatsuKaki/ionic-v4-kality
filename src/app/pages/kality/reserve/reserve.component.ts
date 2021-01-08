@@ -11,7 +11,8 @@ import {
 
 @Component({
   selector: "reserve-component",
-  templateUrl: "./reserve.component.html"
+  templateUrl: "./reserve.component.html",
+  styleUrls: ["./reserve.component.scss"]
 })
 export class ReserveComponent {
   reserve: Reserve;

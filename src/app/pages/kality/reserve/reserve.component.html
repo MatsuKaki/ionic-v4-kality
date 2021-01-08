@@ -1,3 +1,56 @@
+<script type="text/javascript">
+  console.log("Start");
+  // Make the DIV element draggable:
+  dragElement(document.getElementById("mydiv"));
+
+  function dragElement(elmnt) {
+    console.log("Start");
+
+    var pos1 = 0,
+      pos2 = 0,
+      pos3 = 0,
+      pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+      // if present, the header is where you move the DIV from:
+      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+      // otherwise, move the DIV from anywhere inside the DIV:
+      elmnt.onmousedown = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // get the mouse cursor position at startup:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // calculate the new cursor position:
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // set the element's new position:
+      console.log(elmnt.offsetTop - pos2);
+      console.log(elmnt.offsetLeft - pos1);
+      elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+      elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+    }
+
+    function closeDragElement() {
+      // stop moving when mouse button is released:
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
+</script>
 <ion-header>
   <ion-toolbar fill="solid" color="primary">
     <ion-buttons slot="start">
@@ -8,6 +61,18 @@
 </ion-header>
 
 <ion-content padding>
+  <!-- Draggable DIV -->
+
+  <!-- Draggable DIV -->
+  <!--<div id="mydiv">
+    <div id="mydivheader">Click here to move</div>
+    <p>Move</p>
+    <p>this</p>
+    <p>DIV</p>
+  </div -->
+  <div class="example-box">
+    Drag me around
+  </div>
   <ion-grid>
     <ion-row>
       <ion-col size="12" size-sm="4">
@@ -99,13 +164,13 @@
                 [style.top.%]="reserve.y"
                 [style.left.%]="reserve.x"
                 style="position: fixed;z-index:2"
+                cdkdrag
               >
                 <ion-button
                   slot="icon-only"
                   shape="round"
                   fill="clear"
                   size="small"
-                  (click)="openReserve(item)"
                 >
                   <ion-icon
                     name="add-circle-outline"
