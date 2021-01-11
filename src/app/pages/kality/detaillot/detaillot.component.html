@@ -13,8 +13,6 @@
     pager="true"
     [options]="slideOpts"
     (ionSlideDidChange)="onSlideChange()"
-    (ionSlideTouchStart)="onTouchStart()"
-    (ionSlideTouchEnd)="onTouchEnd()"
     zoom="true"
   >
     <ion-slide>
@@ -63,62 +61,40 @@
         icon="arrow-back"
       ></ion-back-button>
     </ion-buttons>
-    <ion-buttons slot="secondary">
-      <ion-button>
-        <div>
-          <font size="1">Temoin<br />technique</font>
-        </div>
-      </ion-button>
-      <ion-button>
-        <div>
-          <font size="1">Pre-<br />visite</font>
-        </div>
-      </ion-button>
-      <ion-button>
-        <div>
-          <font size="1">VAC</font>
-        </div>
-      </ion-button>
-      <ion-button>
-        <div>
-          <font size="1">OPR</font>
-        </div>
-      </ion-button>
-      <ion-button>
-        <div>
-          <font size="1">Pre-<br />Livraison</font>
-        </div>
-      </ion-button>
-      <ion-button>
-        <div>
-          <font size="1">OPL</font>
-        </div>
-      </ion-button>
-      <ion-button>
-        <div>
-          <font size="1">Mise<br />a disposition</font>
-        </div>
-      </ion-button>
-      <ion-button>
-        <div>
-          <font size="1">Etat<br />des lieux</font>
-        </div>
-      </ion-button>
-      <ion-button>
-        <div>
-          <font size="1">Production</font>
-        </div>
-      </ion-button>
-      <ion-button>
-        <div>
-          <font size="1">Visite<br />a 30 J</font>
-        </div>
-      </ion-button>
-      <ion-button>
-        <div>
-          <font size="1">GPA</font>
-        </div>
-      </ion-button>
-    </ion-buttons>
+    <ion-segment scrollable="true" slot="end">
+      <ion-segment-button>
+        <ion-label>Temoin<br />technique</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-label>Pre-<br />visite</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-label>VAC</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-label>OPR</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-label>Pre-<br />Livraison</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-label>OPL</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-label>Mise<br />a disposition</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-label>Etat<br />des lieux</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-label>Production</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-label>Visite<br />a 30 J</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-label>GPA</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-footer>

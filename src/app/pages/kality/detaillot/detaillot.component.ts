@@ -36,33 +36,4 @@ export class DetailLotComponent {
       console.log("Current page is " + this.pageNumber);
     });
   }
-
-  onTouchStart() {
-    this.timer = new Date().getTime();
-  }
-
-  onTouchEnd(event) {
-    let timelapse = new Date().getTime() - this.timer;
-    console.debug("Touch end ");
-    if (new Date().getTime() - this.timer > 1500) {
-      var newReserve = {
-        id: reserves.length,
-        viewtype: "A",
-        x: event.touches[0].pageX,
-        y: event.touches[0].pageY,
-        statut: "En cours",
-        piece: null,
-        artisans: new Artisan(),
-        infoAdditionnelles: "test creation",
-        description: "",
-        images: []
-      };
-      reserves.push(newReserve);
-      this.router.navigate(["kality/reserve/" + newReserve.id]);
-    }
-  }
-
-  openReserve(reserve: Reserve) {
-    this.router.navigate(["kality/reserve/" + reserve.id]);
-  }
 }

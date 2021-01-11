@@ -27,8 +27,8 @@ export let reserves: Reserve[] = [
   {
     id: 1,
     viewtype: "A",
-    x: 23,
-    y: 25,
+    x: 125,
+    y: 125,
     statut: "En cours",
     piece: pieces[0],
     artisans: [
@@ -47,8 +47,8 @@ export let reserves: Reserve[] = [
   {
     id: 2,
     viewtype: "B",
-    x: 50,
-    y: 50,
+    x: 75,
+    y: 200,
     statut: "En cours",
     piece: pieces[1],
     artisans: [
@@ -64,7 +64,7 @@ export let reserves: Reserve[] = [
   {
     id: 3,
     viewtype: "C",
-    x: 33,
+    x: 1,
     y: 70,
     statut: "Levee",
     piece: pieces[2],
