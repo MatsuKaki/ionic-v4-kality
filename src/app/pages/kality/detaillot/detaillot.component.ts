@@ -1,7 +1,7 @@
 import { ViewChild, Component } from "@angular/core";
 import { NavigationExtras, Router } from "@angular/router";
 import { IonSlides } from "@ionic/angular";
-import { Reserve, reserves } from "./reserve.provider";
+import { Artisan, Reserve, reserves } from "./reserve.provider";
 import { Piece } from "./pieces.provider";
 import { CorpsDEtat, Entreprise } from "./carnetadresse.provider";
 
@@ -19,6 +19,8 @@ export class DetailLotComponent {
     }
   };
 
+  timer;
+
   @ViewChild("swiper") swiper: IonSlides;
   pageNumber: 1;
   reserves: Reserve[];
@@ -33,6 +35,31 @@ export class DetailLotComponent {
       this.pageNumber = index + 1;
       console.log("Current page is " + this.pageNumber);
     });
+  }
+
+  onTouchStart() {
+    this.timer = new Date().getTime();
+  }
+
+  onTouchEnd(event) {
+    let timelapse = new Date().getTime() - this.timer;
+    console.debug("Touch end ");
+    if (new Date().getTime() - this.timer > 1500) {
+      var newReserve = {
+        id: reserves.length,
+        viewtype: "A",
+        x: event.touches[0].pageX,
+        y: event.touches[0].pageY,
+        statut: "En cours",
+        piece: null,
+        artisans: new Artisan(),
+        infoAdditionnelles: "test creation",
+        description: "",
+        images: []
+      };
+      reserves.push(newReserve);
+      this.router.navigate(["kality/reserve/" + newReserve.id]);
+    }
   }
 
   openReserve(reserve: Reserve) {

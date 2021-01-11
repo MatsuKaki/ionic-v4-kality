@@ -15,6 +15,7 @@ export class Reserve {
   artisans: Artisan[];
   infoAdditionnelles: string;
   description: string;
+  images: string[];
 }
 
 export class Artisan {
@@ -37,7 +38,11 @@ export let reserves: Reserve[] = [
       }
     ],
     infoAdditionnelles: "info add 1",
-    description: "Description blabla 1"
+    description: "Description blabla 1",
+    images: [
+      "https://stackblitz.com/files/ionic-v4-kality/github/MatsuKaki/ionic-v4-kality/master/src/app/pages/kality/pictures/IMG_2984.JPG",
+      "https://stackblitz.com/files/ionic-v4-kality/github/MatsuKaki/ionic-v4-kality/master/src/app/pages/kality/pictures/IMG_2985.JPG"
+    ]
   },
   {
     id: 2,
@@ -53,7 +58,8 @@ export let reserves: Reserve[] = [
       }
     ],
     infoAdditionnelles: "info add 2",
-    description: "Description blabla 2"
+    description: "Description blabla 2",
+    images: []
   },
   {
     id: 3,
@@ -69,6 +75,7 @@ export let reserves: Reserve[] = [
       }
     ],
     infoAdditionnelles: "info add 3",
-    description: "Description blabla 3"
+    description: "Description blabla 3",
+    images: []
   }
 ];

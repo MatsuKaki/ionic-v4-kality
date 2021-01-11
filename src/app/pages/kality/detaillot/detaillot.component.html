@@ -13,14 +13,16 @@
     pager="true"
     [options]="slideOpts"
     (ionSlideDidChange)="onSlideChange()"
+    (ionSlideTouchStart)="onTouchStart()"
+    (ionSlideTouchEnd)="onTouchEnd()"
     zoom="true"
   >
     <ion-slide>
       <div class="swiper-zoom-container">
         <div
           *ngFor="let item of reserves; let i = index"
-          [style.top.%]="item.y"
-          [style.left.%]="item.x"
+          [style.top.px]="item.y"
+          [style.left.px]="item.x"
           style="position: fixed;z-index:2"
         >
           <ion-button

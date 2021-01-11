@@ -116,6 +116,11 @@
               [(ngModel)]="reserve.infoAdditionnelles"
             ></ion-textarea>
           </ion-item>
+          <ion-item>
+            <ion-thumbnail *ngFor="let picture of reserve.images">
+              <img src="{{picture}}" />
+            </ion-thumbnail>
+          </ion-item>
         </ion-list>
       </ion-col>
       <ion-col size="12" size-sm="8">
@@ -123,8 +128,8 @@
           <ion-slide>
             <div class="swiper-zoom-container">
               <div
-                [style.top.%]="reserve.y"
-                [style.left.%]="reserve.x"
+                [style.top.px]="reserve.y"
+                [style.left.px]="reserve.x"
                 style="position: fixed;z-index:2"
                 cdkDrag
               >
