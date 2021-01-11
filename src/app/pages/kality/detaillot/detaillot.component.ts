@@ -36,4 +36,8 @@ export class DetailLotComponent {
       console.log("Current page is " + this.pageNumber);
     });
   }
+
+  openReserve(reserve: Reserve) {
+    this.router.navigate(["kality/reserve/" + reserve.id]);
+  }
 }
