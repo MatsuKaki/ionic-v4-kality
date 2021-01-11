@@ -5,7 +5,8 @@ import { ToastController } from "@ionic/angular";
 
 @Component({
   selector: "operation-component",
-  templateUrl: "./operation.component.html"
+  templateUrl: "./operation.component.html",
+  styleUrls: ["./operation.component.scss"]
 })
 export class OperationComponent {
   constructor(
