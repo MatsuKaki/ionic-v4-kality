@@ -77,7 +77,9 @@
             let-index="index"
           >
             <ion-item>
-              <ion-label position="stacked">Corps d'etat {{index +1}}</ion-label>
+              <ion-label position="stacked"
+                >Corps d'etat {{index +1}}</ion-label
+              >
               <ionic-selectable
                 [(ngModel)]="currentArtisan.corpsDEtat"
                 [items]="matchingCorpsDEtat[index]"
@@ -89,7 +91,7 @@
               ></ionic-selectable>
             </ion-item>
             <ion-item>
-              <ion-label position="stacked">Entreprise {{index }}</ion-label>
+              <ion-label position="stacked">Entreprise {{index +1 }}</ion-label>
               <ion-select
                 interface="popover"
                 [(ngModel)]="currentArtisan.entreprise"

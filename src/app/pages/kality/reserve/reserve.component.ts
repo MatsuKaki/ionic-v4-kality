@@ -27,6 +27,7 @@ export class ReserveComponent {
 
   slideOpts = {
     borderRadius: "5px",
+    virtualTranslate: true,
     zoom: {
       maxRatio: 4
     }
