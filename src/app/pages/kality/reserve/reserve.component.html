@@ -13,7 +13,7 @@
       <ion-col size="12" size-sm="4">
         <ion-list>
           <ion-item>
-            <ion-label>Piece</ion-label>
+            <ion-label position="stacked">Piece</ion-label>
             <ionic-selectable
               [(ngModel)]="reserve.piece"
               [items]="matchingPieces"
@@ -25,7 +25,7 @@
             ></ionic-selectable>
           </ion-item>
           <ion-item>
-            <ion-label>Statut</ion-label>
+            <ion-label position="stacked">Statut</ion-label>
             <ion-select interface="popover" [(ngModel)]="reserve.statut">
               <ion-select-option value="En cours">En cours</ion-select-option>
               <ion-select-option value="OK MOE">OK MOE</ion-select-option>
@@ -46,37 +46,62 @@
             ></ion-textarea>
           </ion-item>
           <ion-item-divider color="secondary">
-            <ion-label slot="start">
+            <ion-label>
               Intervenants
             </ion-label>
-            <ion-label slot="end">Limiter</ion-label>
-            <ion-checkbox
+            <ion-button
               slot="end"
-              [(ngModel)]="carnetDAdresseOnly"
-            ></ion-checkbox>
+              shape="round"
+              size="small"
+              (click)="addArtisan()"
+            >
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-button>
+            <ion-button
+              slot="end"
+              shape="round"
+              size="small"
+              (click)="removeArtisan()"
+            >
+              <ion-icon name="remove-circle-outline"></ion-icon>
+            </ion-button>
           </ion-item-divider>
           <ion-item>
-            <ion-label>Corps d'etat</ion-label>
-            <ionic-selectable
-              [(ngModel)]="reserve.corpsDEtat"
-              [items]="matchingCorpsDEtat"
-              itemValueField="id"
-              itemTextField="name"
-              [canSearch]="true"
-              (onChange)="corpsDEtatChange($event)"
-              (onSearch)="searchCorpsDEtat($event)"
-            ></ionic-selectable>
+            <ion-label>Limiter au carnet</ion-label>
+            <ion-checkbox [(ngModel)]="carnetDAdresseOnly"></ion-checkbox>
           </ion-item>
-          <ion-item>
-            <ion-label>Entreprise</ion-label>
-            <ion-select interface="popover" [(ngModel)]="reserve.entreprise">
-              <ion-select-option
-                *ngFor="let entreprise of matchingEntreprises"
-                [value]="entreprise"
-                >{{entreprise.name}}</ion-select-option
+          <ng-template
+            ngFor
+            let-currentArtisan
+            [ngForOf]="reserve.artisans"
+            let-index="index"
+          >
+            <ion-item>
+              <ion-label position="stacked">Corps d'etat {{index +1}}</ion-label>
+              <ionic-selectable
+                [(ngModel)]="currentArtisan.corpsDEtat"
+                [items]="matchingCorpsDEtat[index]"
+                itemValueField="id"
+                itemTextField="name"
+                [canSearch]="true"
+                (onChange)="corpsDEtatChange($event, index)"
+                (onSearch)="searchCorpsDEtat($event, index)"
+              ></ionic-selectable>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Entreprise {{index }}</ion-label>
+              <ion-select
+                interface="popover"
+                [(ngModel)]="currentArtisan.entreprise"
               >
-            </ion-select>
-          </ion-item>
+                <ion-select-option
+                  *ngFor="let entreprise of matchingEntreprises[index]"
+                  [value]="entreprise"
+                  >{{currentArtisan.entreprise.name}}</ion-select-option
+                >
+              </ion-select>
+            </ion-item>
+          </ng-template>
           <ion-item-divider color="secondary">
             <ion-label>
               Informations Additionnelles

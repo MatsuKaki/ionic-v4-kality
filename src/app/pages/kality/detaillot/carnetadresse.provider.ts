@@ -171,7 +171,6 @@ export class CarnetDAdresseProvider {
   }
 
   filterCorpsDEtat(text: string) {
-    console.log(this.limiterAuCarnet);
     let matchingCorpsDEtat: CorpsDEtat[];
     if (this.limiterAuCarnet) {
       matchingCorpsDEtat = carnetAdresse
@@ -186,6 +185,7 @@ export class CarnetDAdresseProvider {
     matchingCorpsDEtat.sort(this.sortWeight);
     matchingCorpsDEtat = matchingCorpsDEtat.slice(0, 19);
     matchingCorpsDEtat.sort(this.sortName);
+    console.log("Matching corps d'etat done");
     return matchingCorpsDEtat;
   }
 

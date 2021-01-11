@@ -5,6 +5,7 @@ import { IonicModule } from "@ionic/angular";
 import { RouterModule } from "@angular/router";
 
 import { BatimentComponent } from "./batiment.component";
+import { BatimentCardComponent } from "./batimentCard.component";
 import { LotListComponent } from "./lotlist.component";
 
 @NgModule({
@@ -22,7 +23,7 @@ import { LotListComponent } from "./lotlist.component";
             children: [
               {
                 path: "",
-                component: BatimentComponent
+                component: BatimentCardComponent
               }
             ],
             data: { batiment: "A" }
@@ -56,6 +57,6 @@ import { LotListComponent } from "./lotlist.component";
       }
     ])
   ],
-  declarations: [BatimentComponent, LotListComponent]
+  declarations: [BatimentCardComponent, BatimentComponent, LotListComponent]
 })
 export class LotListModule {}

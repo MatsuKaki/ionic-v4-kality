@@ -12,10 +12,14 @@ export class Reserve {
   y: number;
   statut: string;
   piece: Piece;
-  corpsDEtat: CorpsDEtat;
-  entreprise: Entreprise;
+  artisans: Artisan[];
   infoAdditionnelles: string;
   description: string;
+}
+
+export class Artisan {
+  corpsDEtat: CorpsDEtat;
+  entreprise: Entreprise;
 }
 
 export let reserves: Reserve[] = [
@@ -26,8 +30,12 @@ export let reserves: Reserve[] = [
     y: 25,
     statut: "En cours",
     piece: pieces[0],
-    corpsDEtat: carnetAdresse[0].corpsDEtat,
-    entreprise: carnetAdresse[0].entreprise,
+    artisans: [
+      {
+        corpsDEtat: carnetAdresse[0].corpsDEtat,
+        entreprise: carnetAdresse[0].entreprise
+      }
+    ],
     infoAdditionnelles: "info add 1",
     description: "Description blabla 1"
   },
@@ -38,8 +46,12 @@ export let reserves: Reserve[] = [
     y: 50,
     statut: "En cours",
     piece: pieces[1],
-    corpsDEtat: carnetAdresse[1].corpsDEtat,
-    entreprise: carnetAdresse[1].entreprise,
+    artisans: [
+      {
+        corpsDEtat: carnetAdresse[1].corpsDEtat,
+        entreprise: carnetAdresse[1].entreprise
+      }
+    ],
     infoAdditionnelles: "info add 2",
     description: "Description blabla 2"
   },
@@ -50,8 +62,12 @@ export let reserves: Reserve[] = [
     y: 70,
     statut: "Levee",
     piece: pieces[2],
-    corpsDEtat: carnetAdresse[2].corpsDEtat,
-    entreprise: carnetAdresse[2].entreprise,
+    artisans: [
+      {
+        corpsDEtat: carnetAdresse[2].corpsDEtat,
+        entreprise: carnetAdresse[2].entreprise
+      }
+    ],
     infoAdditionnelles: "info add 3",
     description: "Description blabla 3"
   }
