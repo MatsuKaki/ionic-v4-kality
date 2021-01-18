@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { IonicSelectableComponent } from "ionic-selectable";
 import { Piece, PieceProvider } from "../detaillot/pieces.provider";
 import { Artisan, Reserve, reserves } from "../detaillot/reserve.provider";
+import * as L from "leaflet";
+
 import {
   CarnetDAdresseProvider,
   CorpsDEtat,
@@ -24,14 +26,6 @@ export class ReserveComponent {
 
   matchingEntreprises: Entreprise[][];
   carnetDAdresseOnly = true;
-
-  slideOpts = {
-    borderRadius: "5px",
-    virtualTranslate: true,
-    zoom: {
-      maxRatio: 4
-    }
-  };
 
   constructor(private route: ActivatedRoute) {
     this.pieceProvider = new PieceProvider();
@@ -62,6 +56,44 @@ export class ReserveComponent {
         );
       }
     }
+  }
+
+  ionViewDidEnter() {
+    var corner1 = L.latLng(0, 0),
+      corner2 = L.latLng(650, 1024),
+      bounds = L.latLngBounds(corner1, corner2);
+
+    const map = L.map("map", {
+      crs: L.CRS.Simple,
+      minZoom: -1,
+      zoom: 0,
+      maxZoom: 8,
+      zoomControl: true,
+      attributionControl: false,
+      dragging: true,
+      maxBounds: bounds
+    });
+
+    var bounds = [[0, 0], [650, 1024]];
+    var image = L.imageOverlay(
+      "https://www.terrain-construction.com/content/wp-content/uploads/2018/06/1-Stella-Lara-min-1-1024x650.jpg",
+      bounds
+    ).addTo(map);
+    map.fitBounds(bounds);
+
+    const marker = L.marker(new L.LatLng(this.reserve.x, this.reserve.y), {
+      title: this.reserve.description,
+      draggable: true,
+      icon: new L.DivIcon({
+        className: "my-div-icon",
+        html:
+          '<div class="map-label"><div class="map-label-content">' +
+          this.reserve.id +
+          '</div><div class="map-label-arrow"></div></div>'
+      })
+    });
+
+    map.addLayer(marker);
   }
 
   pieceChange(event: { component: IonicSelectableComponent; value: any }) {
