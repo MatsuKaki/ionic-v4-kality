@@ -26,7 +26,23 @@
 		<ion-buttons slot="start">
 			<ion-back-button defaultHref="kality/lotlist" text="Retour" icon="arrow-back"></ion-back-button>
 		</ion-buttons>
-		<ion-segment scrollable="true" slot="end">
+		<ion-buttons slot="end">
+			<ion-select interface="popover">
+				<ion-select-option value="Tout" sele>Toutes visites</ion-select-option>
+				<ion-select-option value="TemoinTechnique">Temoin technique</ion-select-option>
+				<ion-select-option value="PreVisite">Pre-Visite</ion-select-option>
+				<ion-select-option value="VAC">VAC</ion-select-option>
+				<ion-select-option value="OPR">OPR</ion-select-option>
+				<ion-select-option value="PreLivraison">Pre-Livraison</ion-select-option>
+				<ion-select-option value="OPL">OPL</ion-select-option>
+				<ion-select-option value="MiseADisposition">Mise a disposition</ion-select-option>
+				<ion-select-option value="EtatDesLieux">Etat des lieux</ion-select-option>
+				<ion-select-option value="Production">Production</ion-select-option>
+				<ion-select-option value="VisiteA30J">Visite a 30 J</ion-select-option>
+				<ion-select-option value="GPA">GPA</ion-select-option>
+			</ion-select>
+		</ion-buttons>
+		<!--<ion-segment scrollable="true" slot="end">
 			<ion-segment-button>
 				<ion-label>Temoin<br />technique</ion-label>
 			</ion-segment-button>
@@ -60,6 +76,6 @@
 			<ion-segment-button>
 				<ion-label>GPA</ion-label>
 			</ion-segment-button>
-		</ion-segment>
+		</ion-segment>-->
 	</ion-toolbar>
 </ion-footer>
