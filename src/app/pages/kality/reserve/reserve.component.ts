@@ -74,7 +74,6 @@ export class ReserveComponent {
       maxBounds: bounds
     });
 
-    var bounds = [[0, 0], [650, 1024]];
     var image = L.imageOverlay(
       "https://www.terrain-construction.com/content/wp-content/uploads/2018/06/1-Stella-Lara-min-1-1024x650.jpg",
       bounds
@@ -88,6 +87,8 @@ export class ReserveComponent {
         className: "my-div-icon",
         html:
           '<div class="map-label"><div class="map-label-content">' +
+          this.reserve.viewtype +
+          "-" +
           this.reserve.id +
           '</div><div class="map-label-arrow"></div></div>'
       })

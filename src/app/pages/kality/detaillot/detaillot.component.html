@@ -1,100 +1,65 @@
 <ion-header>
-  <ion-toolbar fill="solid" color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Operation 1 - A001 - 2 Pieces - Herve MARTIN</ion-title>
-  </ion-toolbar>
+	<ion-toolbar fill="solid" color="primary">
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>Operation 1 - A001 - 2 Pieces - Herve MARTIN</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-slides
-    #swiper
-    pager="true"
-    [options]="slideOpts"
-    (ionSlideDidChange)="onSlideChange()"
-    zoom="true"
-  >
-    <ion-slide>
-      <div class="swiper-zoom-container">
-        <div
-          *ngFor="let item of reserves; let i = index"
-          [style.top.px]="item.y"
-          [style.left.px]="item.x"
-          style="position: fixed;z-index:2"
-        >
-          <ion-button
-            slot="icon-only"
-            shape="round"
-            fill="clear"
-            size="small"
-            (click)="openReserve(item)"
-          >
-            <ion-icon name="add-circle-outline" color="primary"></ion-icon>
-          </ion-button>
-          <ion-label>{{ item.viewtype }} - {{ item.id }}</ion-label>
-        </div>
-        <img
-          src="https://www.terrain-construction.com/content/wp-content/uploads/2018/06/1-Stella-Lara-min-1-1024x650.jpg"
-        />
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div class="swiper-zoom-container">
-        <img src="https://mhartington.io/img/v4-upgrade/ionic-icon.png" />
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div class="swiper-zoom-container">
-        <img src="https://mhartington.io/img/v4-upgrade/ionic-icon.png" />
-      </div>
-    </ion-slide>
-  </ion-slides>
+	<ion-slides #swiper pager="true" [options]="slideOpts" zoom="true">
+		<ion-slide>
+			<div id="map1" style="width : 100%; height : 750px;"></div>
+		</ion-slide>
+		<ion-slide>
+			<div id="map2" style="width : 100%; height : 750px;"></div>
+		</ion-slide>
+		<ion-slide>
+			<div id="map3" style="width : 100%; height : 750px;"></div>
+		</ion-slide>
+	</ion-slides>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar fill="solid" color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button
-        defaultHref="kality/lotlist"
-        text="Retour"
-        icon="arrow-back"
-      ></ion-back-button>
-    </ion-buttons>
-    <ion-segment scrollable="true" slot="end">
-      <ion-segment-button>
-        <ion-label>Temoin<br />technique</ion-label>
-      </ion-segment-button>
-      <ion-segment-button>
-        <ion-label>Pre-<br />visite</ion-label>
-      </ion-segment-button>
-      <ion-segment-button>
-        <ion-label>VAC</ion-label>
-      </ion-segment-button>
-      <ion-segment-button>
-        <ion-label>OPR</ion-label>
-      </ion-segment-button>
-      <ion-segment-button>
-        <ion-label>Pre-<br />Livraison</ion-label>
-      </ion-segment-button>
-      <ion-segment-button>
-        <ion-label>OPL</ion-label>
-      </ion-segment-button>
-      <ion-segment-button>
-        <ion-label>Mise<br />a disposition</ion-label>
-      </ion-segment-button>
-      <ion-segment-button>
-        <ion-label>Etat<br />des lieux</ion-label>
-      </ion-segment-button>
-      <ion-segment-button>
-        <ion-label>Production</ion-label>
-      </ion-segment-button>
-      <ion-segment-button>
-        <ion-label>Visite<br />a 30 J</ion-label>
-      </ion-segment-button>
-      <ion-segment-button>
-        <ion-label>GPA</ion-label>
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
+	<ion-toolbar fill="solid" color="primary">
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="kality/lotlist" text="Retour" icon="arrow-back"></ion-back-button>
+		</ion-buttons>
+		<ion-segment scrollable="true" slot="end">
+			<ion-segment-button>
+				<ion-label>Temoin<br />technique</ion-label>
+			</ion-segment-button>
+			<ion-segment-button>
+				<ion-label>Pre-<br />visite</ion-label>
+			</ion-segment-button>
+			<ion-segment-button>
+				<ion-label>VAC</ion-label>
+			</ion-segment-button>
+			<ion-segment-button>
+				<ion-label>OPR</ion-label>
+			</ion-segment-button>
+			<ion-segment-button>
+				<ion-label>Pre-<br />Livraison</ion-label>
+			</ion-segment-button>
+			<ion-segment-button>
+				<ion-label>OPL</ion-label>
+			</ion-segment-button>
+			<ion-segment-button>
+				<ion-label>Mise<br />a disposition</ion-label>
+			</ion-segment-button>
+			<ion-segment-button>
+				<ion-label>Etat<br />des lieux</ion-label>
+			</ion-segment-button>
+			<ion-segment-button>
+				<ion-label>Production</ion-label>
+			</ion-segment-button>
+			<ion-segment-button>
+				<ion-label>Visite<br />a 30 J</ion-label>
+			</ion-segment-button>
+			<ion-segment-button>
+				<ion-label>GPA</ion-label>
+			</ion-segment-button>
+		</ion-segment>
+	</ion-toolbar>
 </ion-footer>
