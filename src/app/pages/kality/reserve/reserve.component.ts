@@ -120,7 +120,7 @@ export class ReserveComponent {
     this.matchingEntreprises[
       index
     ] = this.carnetAdresseProvider.filterEntreprise(event.value);
-    if (this.matchingEntreprises.length > 0) {
+    if (this.matchingEntreprises[index].length == 1) {
       this.reserve.artisans[index].entreprise = this.matchingEntreprises[
         index
       ][0];

@@ -111,9 +111,12 @@ export class PieceProvider {
   }
 
   private matches(element, index, array, text) {
-    let result: number;
-    result = element.name.indexOf(text);
-    return result > -1;
+    let result: boolean;
+    result = element.name.toLowerCase().startsWith(text.toLowerCase());
+    result =
+      result ||
+      element.name.toLowerCase().indexOf(" " + text.toLowerCase()) > -1;
+    return result;
   }
 
   private sortWeight(obj1: Piece, obj2: Piece) {

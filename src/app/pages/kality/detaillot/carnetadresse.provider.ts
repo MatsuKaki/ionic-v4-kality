@@ -190,9 +190,12 @@ export class CarnetDAdresseProvider {
   }
 
   private matchesCorpsDEtat(element, index, array, text) {
-    let result: number;
-    result = element.name.indexOf(text);
-    return result > -1;
+    let result: boolean;
+    result = element.name.toLowerCase().startsWith(text.toLowerCase());
+    result =
+      result ||
+      element.name.toLowerCase().indexOf(" " + text.toLowerCase()) > -1;
+    return result;
   }
 
   private sortWeight(obj1: CorpsDEtat, obj2: CorpsDEtat) {
