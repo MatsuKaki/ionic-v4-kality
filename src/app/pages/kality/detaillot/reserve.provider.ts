@@ -16,6 +16,10 @@ export class Reserve {
   infoAdditionnelles: string;
   description: string;
   images: string[];
+  dateCreation: string;
+  dateModification: string;
+  dateValidationOR: string;
+  dateCloture: string;
 }
 
 export class Artisan {
@@ -42,7 +46,11 @@ export let reserves: Reserve[] = [
     images: [
       "https://stackblitz.com/files/ionic-v4-kality/github/MatsuKaki/ionic-v4-kality/master/src/app/pages/kality/pictures/IMG_2984.JPG",
       "https://stackblitz.com/files/ionic-v4-kality/github/MatsuKaki/ionic-v4-kality/master/src/app/pages/kality/pictures/IMG_2985.JPG"
-    ]
+    ],
+    dateCreation: "2020-01-16",
+    dateModification: "2020-01-17",
+    dateValidationOR: null,
+    dateCloture: null
   },
   {
     id: 2,
@@ -59,7 +67,11 @@ export let reserves: Reserve[] = [
     ],
     infoAdditionnelles: "info add 2",
     description: "Description blabla 2",
-    images: []
+    images: [],
+    dateCreation: "2020-01-16",
+    dateModification: "2020-01-17",
+    dateValidationOR: null,
+    dateCloture: null
   },
   {
     id: 3,
@@ -76,7 +88,11 @@ export let reserves: Reserve[] = [
     ],
     infoAdditionnelles: "info add 3",
     description: "Description blabla 3",
-    images: []
+    images: [],
+    dateCreation: "2020-01-16",
+    dateModification: "2020-01-17",
+    dateValidationOR: "2020-01-17",
+    dateCloture: "2020-01-20"
   },
   {
     id: 4,
@@ -93,6 +109,10 @@ export let reserves: Reserve[] = [
     ],
     infoAdditionnelles: "info add 4",
     description: "Description blabla 4",
-    images: []
+    images: [],
+    dateCreation: "2020-01-16",
+    dateModification: "2020-01-17",
+    dateValidationOR: "2020-01-17",
+    dateCloture: "2020-01-20"
   }
 ];
