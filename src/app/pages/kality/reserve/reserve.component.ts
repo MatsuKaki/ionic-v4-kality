@@ -80,7 +80,7 @@ export class ReserveComponent {
     ).addTo(map);
     map.fitBounds(bounds);
 
-    const marker = L.marker(new L.LatLng(this.reserve.x, this.reserve.y), {
+    const marker = L.marker(new L.LatLng(this.reserve.y, this.reserve.x), {
       title: this.reserve.description,
       draggable: true,
       icon: new L.DivIcon({

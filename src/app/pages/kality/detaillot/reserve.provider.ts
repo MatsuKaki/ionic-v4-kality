@@ -27,8 +27,8 @@ export let reserves: Reserve[] = [
   {
     id: 1,
     viewtype: "A",
-    x: 125,
-    y: 125,
+    x: 325,
+    y: 325,
     statut: "En cours",
     piece: pieces[0],
     artisans: [
@@ -47,7 +47,7 @@ export let reserves: Reserve[] = [
   {
     id: 2,
     viewtype: "B",
-    x: 75,
+    x: 567,
     y: 200,
     statut: "En cours",
     piece: pieces[1],
@@ -64,7 +64,7 @@ export let reserves: Reserve[] = [
   {
     id: 3,
     viewtype: "C",
-    x: 1,
+    x: 789,
     y: 70,
     statut: "Levee",
     piece: pieces[2],
@@ -76,6 +76,23 @@ export let reserves: Reserve[] = [
     ],
     infoAdditionnelles: "info add 3",
     description: "Description blabla 3",
+    images: []
+  },
+  {
+    id: 4,
+    viewtype: "C",
+    x: 789,
+    y: 70,
+    statut: "Levee",
+    piece: pieces[2],
+    artisans: [
+      {
+        corpsDEtat: carnetAdresse[2].corpsDEtat,
+        entreprise: carnetAdresse[2].entreprise
+      }
+    ],
+    infoAdditionnelles: "info add 4",
+    description: "Description blabla 4",
     images: []
   }
 ];

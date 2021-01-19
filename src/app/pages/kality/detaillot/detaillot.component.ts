@@ -6,8 +6,6 @@ import { Piece } from "./pieces.provider";
 import { CorpsDEtat, Entreprise } from "./carnetadresse.provider";
 import * as L from "leaflet";
 import { MarkerClusterGroup } from "leaflet.markercluster";
-import "leaflet.markercluster/dist/MarkerCluster.Default.css";
-import "leaflet/dist/leaflet.css";
 
 @Component({
   selector: "detaillot-component",
@@ -56,7 +54,7 @@ export class DetailLotComponent {
 
     for (let i = 0; i < this.reserves.length; i++) {
       var reserve = this.reserves[i];
-      const marker = L.marker(new L.LatLng(reserve.x, reserve.y), {
+      const marker = L.marker(new L.LatLng(reserve.y, reserve.x), {
         title: reserve.description,
         reserveId: reserve.id,
         icon: new L.DivIcon({
@@ -73,7 +71,7 @@ export class DetailLotComponent {
     }
     markerCluster.on("click", a => this.openReserve(a.layer), this);
 
-    markerCluster.on("clusterclick", function(a) {
+    /*markerCluster.on("clusterclick", function(a) {
       let content = "";
       var children = a.layer.getAllChildMarkers();
       for (let i = 0; i < children.length; i++) {
@@ -84,7 +82,7 @@ export class DetailLotComponent {
         .setLatLng(a.layer.getLatLng())
         .setContent(content)
         .openOn(map);
-    });
+    });*/
     map.addLayer(markerCluster);
 
     const map2 = L.map("map2", {
