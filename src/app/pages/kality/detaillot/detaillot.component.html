@@ -10,13 +10,13 @@
 <ion-content padding>
 	<ion-slides #swiper pager="true" [options]="slideOpts" zoom="true">
 		<ion-slide>
-			<div id="map1" style="width : 100%; height : 750px;"></div>
+			<div id="map1" style="width : 100%" [style.height.px]="height"></div>
 		</ion-slide>
 		<ion-slide>
-			<div id="map2" style="width : 100%; height : 750px;"></div>
+			<div id="map2" style="width : 100%" [style.height.px]="height"></div>
 		</ion-slide>
 		<ion-slide>
-			<div id="map3" style="width : 100%; height : 750px;"></div>
+			<div id="map3" style="width : 100%" [style.height.px]="height"></div>
 		</ion-slide>
 	</ion-slides>
 </ion-content>
@@ -25,6 +25,9 @@
 	<ion-toolbar fill="solid" color="primary">
 		<ion-buttons slot="start">
 			<ion-back-button defaultHref="kality/lotlist" text="Retour" icon="arrow-back"></ion-back-button>
+		</ion-buttons>
+		<ion-buttons slot="primary">
+			<ion-back-button defaultHref="kality/compteur" text="Compteur" icon="cog"></ion-back-button>
 		</ion-buttons>
 		<ion-buttons slot="end">
 			<ion-select interface="popover">
@@ -42,40 +45,5 @@
 				<ion-select-option value="GPA">GPA</ion-select-option>
 			</ion-select>
 		</ion-buttons>
-		<!--<ion-segment scrollable="true" slot="end">
-			<ion-segment-button>
-				<ion-label>Temoin<br />technique</ion-label>
-			</ion-segment-button>
-			<ion-segment-button>
-				<ion-label>Pre-<br />visite</ion-label>
-			</ion-segment-button>
-			<ion-segment-button>
-				<ion-label>VAC</ion-label>
-			</ion-segment-button>
-			<ion-segment-button>
-				<ion-label>OPR</ion-label>
-			</ion-segment-button>
-			<ion-segment-button>
-				<ion-label>Pre-<br />Livraison</ion-label>
-			</ion-segment-button>
-			<ion-segment-button>
-				<ion-label>OPL</ion-label>
-			</ion-segment-button>
-			<ion-segment-button>
-				<ion-label>Mise<br />a disposition</ion-label>
-			</ion-segment-button>
-			<ion-segment-button>
-				<ion-label>Etat<br />des lieux</ion-label>
-			</ion-segment-button>
-			<ion-segment-button>
-				<ion-label>Production</ion-label>
-			</ion-segment-button>
-			<ion-segment-button>
-				<ion-label>Visite<br />a 30 J</ion-label>
-			</ion-segment-button>
-			<ion-segment-button>
-				<ion-label>GPA</ion-label>
-			</ion-segment-button>
-		</ion-segment>-->
 	</ion-toolbar>
 </ion-footer>

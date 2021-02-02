@@ -9,6 +9,8 @@ import { IonicSelectableModule } from "ionic-selectable";
 import { OperationComponent } from "./operation/operation.component";
 import { DetailLotComponent } from "./detaillot/detaillot.component";
 import { ReserveComponent } from "./reserve/reserve.component";
+import { SizeDetectorComponent } from "./size-detector/size-detector.component";
+import { ResizeService } from "./size-detector/resize.service";
 
 @NgModule({
   imports: [
@@ -36,6 +38,12 @@ import { ReserveComponent } from "./reserve/reserve.component";
       }
     ])
   ],
-  declarations: [OperationComponent, DetailLotComponent, ReserveComponent]
+  declarations: [
+    OperationComponent,
+    DetailLotComponent,
+    ReserveComponent,
+    SizeDetectorComponent
+  ],
+  providers: [ResizeService]
 })
 export class KalityModule {}

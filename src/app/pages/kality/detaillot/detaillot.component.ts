@@ -1,6 +1,6 @@
 import { ViewChild, Component } from "@angular/core";
 import { NavigationExtras, Router } from "@angular/router";
-import { IonSlides } from "@ionic/angular";
+import { IonSlides, Platform } from "@ionic/angular";
 import { Artisan, Reserve, reserves } from "./reserve.provider";
 import { Piece } from "./pieces.provider";
 import { CorpsDEtat, Entreprise } from "./carnetadresse.provider";
@@ -20,15 +20,24 @@ export class DetailLotComponent {
 
   @ViewChild("swiper") swiper: IonSlides;
   reserves: Reserve[];
+  width: number;
+  height: number;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private platform: Platform) {
     this.reserves = reserves;
+    platform.ready().then(readySource => {
+      console.log("Width: " + platform.width());
+      console.log("Height: " + platform.height());
+      this.height = platform.height();
+      this.width = platform.width();
+    });
   }
 
   ionViewDidEnter() {
     var corner1 = L.latLng(0, 0),
-      corner2 = L.latLng(650, 1024),
+      corner2 = L.latLng(756, 1024),
       bounds = L.latLngBounds(corner1, corner2);
+    console.log("Bounds are " + corner1 + ", " + corner2);
 
     const map = L.map("map1", {
       crs: L.CRS.Simple,
@@ -71,18 +80,6 @@ export class DetailLotComponent {
     }
     markerCluster.on("click", a => this.openReserve(a.layer), this);
 
-    /*markerCluster.on("clusterclick", function(a) {
-      let content = "";
-      var children = a.layer.getAllChildMarkers();
-      for (let i = 0; i < children.length; i++) {
-        content += children[i].options["title"] + "<br/>";
-      }
-      // a.layer is actually a cluster
-      var popup = L.popup()
-        .setLatLng(a.layer.getLatLng())
-        .setContent(content)
-        .openOn(map);
-    });*/
     map.addLayer(markerCluster);
 
     const map2 = L.map("map2", {
