@@ -9,6 +9,7 @@ import { IonicSelectableModule } from "ionic-selectable";
 import { OperationComponent } from "./operation/operation.component";
 import { DetailLotComponent } from "./detaillot/detaillot.component";
 import { ReserveComponent } from "./reserve/reserve.component";
+import { CompteurComponent } from "./compteur/compteur.component";
 import { SizeDetectorComponent } from "./size-detector/size-detector.component";
 import { ResizeService } from "./size-detector/resize.service";
 
@@ -33,6 +34,14 @@ import { ResizeService } from "./size-detector/resize.service";
         component: DetailLotComponent
       },
       {
+        path: "compteur",
+        component: CompteurComponent
+      },
+      {
+        path: "listereserves",
+        loadChildren: "./listereserves/listereserves.module#ListeReservesModule"
+      },
+      {
         path: "reserve/:id",
         component: ReserveComponent
       }
@@ -42,7 +51,8 @@ import { ResizeService } from "./size-detector/resize.service";
     OperationComponent,
     DetailLotComponent,
     ReserveComponent,
-    SizeDetectorComponent
+    SizeDetectorComponent,
+    CompteurComponent
   ],
   providers: [ResizeService]
 })
