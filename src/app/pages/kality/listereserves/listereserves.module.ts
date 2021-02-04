@@ -51,7 +51,7 @@ import { ListeReservesComponent } from "./listereserves.component";
             path: "locataire",
             children: [
               {
-                path: "locataire",
+                path: "",
                 component: LocataireComponent
               }
             ]
