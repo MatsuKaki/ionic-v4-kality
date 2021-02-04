@@ -23,7 +23,7 @@ import { LotListComponent } from "./lotlist.component";
             children: [
               {
                 path: "",
-                component: BatimentCardComponent
+                component: BatimentComponent
               }
             ],
             data: { batiment: "A" }
