@@ -10,8 +10,16 @@
 <ion-split-pane contentId="main-content">
 	<ion-menu side="start" content-id="main-content">
 		<ion-header>
-			<ion-toolbar translucent>
+			<ion-toolbar>
 				<ion-title>Liste des réserves</ion-title>
+			</ion-toolbar>
+			<ion-toolbar>
+				<ion-title>
+					<ion-button>
+						<ion-icon slot="icon-only" name="print"></ion-icon>
+					</ion-button>
+					Liste des réserves
+				</ion-title>
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
@@ -79,7 +87,6 @@
 						<h2>Carreau fendu sur le sol</h2>
 						<h3>Carrelage - Les carreleurs bretons</h3>
 					</ion-label>
-					<ion-note slot="end" color="warning">En cours</ion-note>
 				</ion-item>
 				<ion-item>
 					<ion-avatar slot="start">
@@ -102,10 +109,25 @@
 						<h2>Carreau fendu sur le sol</h2>
 						<h3>Carrelage - Les carreleurs bretons</h3>
 					</ion-label>
-					<ion-note slot="end" color="warning">En cours</ion-note>
+				</ion-item>
+				<ion-item>
+					<ion-avatar slot="start">
+						<ion-label color="warning">
+							B8
+						</ion-label>
+					</ion-avatar>
+					<ion-label class="ion-text-wrap">
+						<h2>Carreau fendu sur le sol</h2>
+						<h3>Carrelage - Les carreleurs bretons</h3>
+					</ion-label>
 				</ion-item>
 			</ion-list>
 		</ion-content>
+		<ion-footer>
+			<ion-buttons slot="start">
+				<ion-back-button defaultHref="kality/lotlist" text="Retour" icon="arrow-back"></ion-back-button>
+			</ion-buttons>
+		</ion-footer>
 	</ion-menu>
 	<div class="ion-page" id="main-content">
 		<ion-content padding>
@@ -133,8 +155,10 @@
 			<ion-button href="kality/compteur">
 				<ion-icon slot="start" name="star"></ion-icon>Compteur
 			</ion-button>
+		</ion-buttons>
+		<ion-buttons slot="secondary">
 			<ion-button href="kality/listereserves">
-				<ion-icon slot="start" name="star"></ion-icon>Liste Réserves
+				<ion-icon slot="start" name="star"></ion-icon>Contacts
 			</ion-button>
 		</ion-buttons>
 		<ion-buttons slot="end">

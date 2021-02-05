@@ -58,7 +58,7 @@ import { ListeReservesComponent } from "./listereserves.component";
           },
           {
             path: "",
-            redirectTo: "reserves",
+            redirectTo: "acquereur",
             pathMatch: "full"
           }
         ]
