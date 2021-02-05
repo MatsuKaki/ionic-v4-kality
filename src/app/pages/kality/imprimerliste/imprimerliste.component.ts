@@ -8,9 +8,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class ImprimerListeComponent {
   pdfSource =
-    "https://github.com/MatsuKaki/ionic-v4-kality/blob/master/src/app/pages/kality/pictures/Liste%20des%20r%C3%A9serves.pdf";
+    "https://stackblitz.com/files/ionic-v4-kality/github/MatsuKaki/ionic-v4-kality/master/src/app/pages/kality/pictures/ListeDesReserves.pdf";
   //https://github.com/MatsuKaki/i
-  /*pdfSource = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf";*/
-
-  constructor() {}
+  /*pdfSource = "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf"*/ constructor() {}
 }
