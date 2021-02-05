@@ -11,10 +11,6 @@ import { OperationComponent } from "./operation/operation.component";
 import { ReserveComponent } from "./reserve/reserve.component";
 import { CompteurComponent } from "./compteur/compteur.component";
 import { ImprimerListeComponent } from "./imprimerliste/imprimerliste.component";
-import { AcquereurComponent } from "./listereserves/acquereur.component";
-import { LocataireComponent } from "./listereserves/locataire.component";
-import { AgenceComponent } from "./listereserves/agence.component";
-import { ReservesComponent } from "./listereserves/reserves.component";
 
 import { SizeDetectorComponent } from "./size-detector/size-detector.component";
 import { ResizeService } from "./size-detector/resize.service";
@@ -63,11 +59,7 @@ import { ResizeService } from "./size-detector/resize.service";
     ReserveComponent,
     SizeDetectorComponent,
     CompteurComponent,
-    ImprimerListeComponent,
-    AcquereurComponent,
-    AgenceComponent,
-    LocataireComponent,
-    ReservesComponent
+    ImprimerListeComponent
   ],
   providers: [ResizeService]
 })

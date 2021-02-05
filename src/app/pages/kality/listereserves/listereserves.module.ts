@@ -54,8 +54,7 @@ import { ListeReservesComponent } from "./listereserves.component";
           }
         ]
       }
-    ]),
-    KalityModule
+    ])
   ],
   declarations: [ListeReservesComponent]
 })

@@ -3,7 +3,6 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { IonicModule } from "@ionic/angular";
 import { RouterModule } from "@angular/router";
-import { KalityModule } from "../kality.module";
 
 import { AcquereurComponent } from "../listereserves/acquereur.component";
 import { LocataireComponent } from "../listereserves/locataire.component";
@@ -64,9 +63,14 @@ import { DetailLotComponent } from "./detaillot.component";
           }
         ]
       }
-    ]),
-    KalityModule
+    ])
   ],
-  declarations: [DetailLotComponent]
+  declarations: [
+    DetailLotComponent,
+    ReservesComponent,
+    AcquereurComponent,
+    AgenceComponent,
+    LocataireComponent
+  ]
 })
 export class DetailLotModule {}
