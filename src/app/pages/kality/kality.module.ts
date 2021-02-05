@@ -5,11 +5,14 @@ import { IonicModule } from "@ionic/angular";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { RouterModule } from "@angular/router";
 import { IonicSelectableModule } from "ionic-selectable";
+import { PdfViewerModule } from "ng2-pdf-viewer";
 
 import { OperationComponent } from "./operation/operation.component";
 import { DetailLotComponent } from "./detaillot/detaillot.component";
 import { ReserveComponent } from "./reserve/reserve.component";
 import { CompteurComponent } from "./compteur/compteur.component";
+import { ImprimerListeComponent } from "./imprimerliste/imprimerliste.component";
+
 import { SizeDetectorComponent } from "./size-detector/size-detector.component";
 import { ResizeService } from "./size-detector/resize.service";
 
@@ -20,6 +23,7 @@ import { ResizeService } from "./size-detector/resize.service";
     IonicModule,
     IonicSelectableModule,
     DragDropModule,
+    PdfViewerModule,
     RouterModule.forChild([
       {
         path: "",
@@ -44,6 +48,10 @@ import { ResizeService } from "./size-detector/resize.service";
       {
         path: "reserve/:id",
         component: ReserveComponent
+      },
+      {
+        path: "imprimerliste",
+        component: ImprimerListeComponent
       }
     ])
   ],
@@ -52,7 +60,8 @@ import { ResizeService } from "./size-detector/resize.service";
     DetailLotComponent,
     ReserveComponent,
     SizeDetectorComponent,
-    CompteurComponent
+    CompteurComponent,
+    ImprimerListeComponent
   ],
   providers: [ResizeService]
 })
