@@ -4,11 +4,11 @@ import { FormsModule } from "@angular/forms";
 import { IonicModule } from "@ionic/angular";
 import { RouterModule } from "@angular/router";
 
-import { ReservesComponent } from "./reserves.component";
-import { AcquereurComponent } from "./acquereur.component";
-import { LocataireComponent } from "./locataire.component";
-import { AgenceComponent } from "./agence.component";
-import { ListeReservesComponent } from "./listereserves.component";
+import { ReservesComponent } from "../listereserves/reserves.component";
+import { AcquereurComponent } from "../listereserves/acquereur.component";
+import { LocataireComponent } from "../listereserves/locataire.component";
+import { AgenceComponent } from "../listereserves/agence.component";
+import { DetailLotComponent } from "./detaillot.component";
 
 @NgModule({
   imports: [
@@ -18,8 +18,17 @@ import { ListeReservesComponent } from "./listereserves.component";
     RouterModule.forChild([
       {
         path: "",
-        component: ListeReservesComponent,
+        component: DetailLotComponent,
         children: [
+          {
+            path: "reserves",
+            children: [
+              {
+                path: "",
+                component: ReservesComponent
+              }
+            ]
+          },
           {
             path: "acquereur",
             children: [
@@ -49,7 +58,7 @@ import { ListeReservesComponent } from "./listereserves.component";
           },
           {
             path: "",
-            redirectTo: "acquereur",
+            redirectTo: "reserves",
             pathMatch: "full"
           }
         ]
@@ -57,10 +66,11 @@ import { ListeReservesComponent } from "./listereserves.component";
     ])
   ],
   declarations: [
-    ListeReservesComponent,
+    DetailLotComponent,
+    ReservesComponent,
     AcquereurComponent,
     AgenceComponent,
     LocataireComponent
   ]
 })
-export class ListeReservesModule {}
+export class DetailLotModule {}

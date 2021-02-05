@@ -18,115 +18,24 @@
 			<ion-toolbar>
 				<ion-title>Liste des réserves</ion-title>
 			</ion-toolbar>
-			<ion-toolbar>
-				<ion-title>
-					<ion-button href="./kality/imprimerliste">
-						<ion-icon slot="icon-only" name="print"></ion-icon>
-					</ion-button>
-					Liste des réserves
-				</ion-title>
-			</ion-toolbar>
 		</ion-header>
 		<ion-content>
-			<ion-list>
-				<ion-list-header>
-					Séjour
-				</ion-list-header>
-				<ion-item href="./kality/reserve/1">
-					<ion-avatar slot="start">
-						<ion-label color="warning">
-							A1
-						</ion-label>
-					</ion-avatar>
-					<ion-label class="ion-text-wrap">
-						<h2>Rayure sur le parquet à poncer</h2>
-						<h3>Revêtement de sols souples - TOULESOL</h3>
-					</ion-label>
-				</ion-item>
-				<ion-list-header>
-					Salle de bains 1
-				</ion-list-header>
-				<ion-item href="./kality/reserve/2">
-					<ion-avatar slot="start">
-						<ion-label color="warning">
-							B2
-						</ion-label>
-					</ion-avatar>
-					<ion-label class="ion-text-wrap">
-						<h2>Coulures de peinture</h2>
-						<h3>Peinture intérieure - Peinture de Paris</h3>
-					</ion-label>
-				</ion-item>
-				<ion-list-header>
-					Chambre 3
-				</ion-list-header>
-				<ion-item href="./kality/reserve/3">
-					<ion-avatar slot="start">
-						<ion-label color="success">
-							C3
-						</ion-label>
-					</ion-avatar>
-					<ion-label class="ion-text-wrap">
-						<h2>Manque stop-porte</h2>
-						<h3>Portes et fenêtres - Mensuiserie Gérard</h3>
-					</ion-label>
-				</ion-item>
-				<ion-item href="./kality/reserve/4">
-					<ion-avatar slot="start">
-						<ion-label color="success">
-							C4
-						</ion-label>
-					</ion-avatar>
-					<ion-label class="ion-text-wrap">
-						<h2>Plinthe qui se décolle</h2>
-						<h3>Menuiserie intérieure - Mensuiserie Gérard</h3>
-					</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-avatar slot="start">
-						<ion-label color="warning">
-							B5
-						</ion-label>
-					</ion-avatar>
-					<ion-label class="ion-text-wrap">
-						<h2>Carreau fendu sur le sol</h2>
-						<h3>Carrelage - Les carreleurs bretons</h3>
-					</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-avatar slot="start">
-						<ion-label color="success">
-							B6
-						</ion-label>
-					</ion-avatar>
-					<ion-label class="ion-text-wrap">
-						<h2>Manque stop-porte</h2>
-						<h3>Portes et fenêtres - Mensuiserie Gérard</h3>
-					</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-avatar slot="start">
-						<ion-label color="warning">
-							B7
-						</ion-label>
-					</ion-avatar>
-					<ion-label class="ion-text-wrap">
-						<h2>Carreau fendu sur le sol</h2>
-						<h3>Carrelage - Les carreleurs bretons</h3>
-					</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-avatar slot="start">
-						<ion-label color="warning">
-							B8
-						</ion-label>
-					</ion-avatar>
-					<ion-label class="ion-text-wrap">
-						<h2>Carreau fendu sur le sol</h2>
-						<h3>Carrelage - Les carreleurs bretons</h3>
-					</ion-label>
-				</ion-item>
-			</ion-list>
+			<ion-tabs>
+				<ion-tab-bar slot="top">
+					<ion-tab-button tab="reserves">
+						<ion-label>Réserves</ion-label>
+					</ion-tab-button>
+					<ion-tab-button tab="acquereur">
+						<ion-label>Acquéreur</ion-label>
+					</ion-tab-button>
+					<ion-tab-button tab="agence">
+						<ion-label>Agence Location</ion-label>
+					</ion-tab-button>
+					<ion-tab-button tab="locataire">
+						<ion-label>Locataires</ion-label>
+					</ion-tab-button>
+				</ion-tab-bar>
+			</ion-tabs>
 		</ion-content>
 		<ion-footer>
 			<ion-buttons slot="start">

@@ -35,7 +35,7 @@ import { ResizeService } from "./size-detector/resize.service";
       },
       {
         path: "detaillot",
-        component: DetailLotComponent
+        loadChildren: "./detaillot/detaillot.module#DetailLotModule"
       },
       {
         path: "compteur",
@@ -57,7 +57,6 @@ import { ResizeService } from "./size-detector/resize.service";
   ],
   declarations: [
     OperationComponent,
-    DetailLotComponent,
     ReserveComponent,
     SizeDetectorComponent,
     CompteurComponent,
