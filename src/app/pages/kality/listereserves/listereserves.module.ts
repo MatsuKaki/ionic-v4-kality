@@ -3,8 +3,8 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { IonicModule } from "@ionic/angular";
 import { RouterModule } from "@angular/router";
+import { KalityModule } from "../kality.module";
 
-import { ReservesComponent } from "./reserves.component";
 import { AcquereurComponent } from "./acquereur.component";
 import { LocataireComponent } from "./locataire.component";
 import { AgenceComponent } from "./agence.component";
@@ -54,13 +54,9 @@ import { ListeReservesComponent } from "./listereserves.component";
           }
         ]
       }
-    ])
+    ]),
+    KalityModule
   ],
-  declarations: [
-    ListeReservesComponent,
-    AcquereurComponent,
-    AgenceComponent,
-    LocataireComponent
-  ]
+  declarations: [ListeReservesComponent]
 })
 export class ListeReservesModule {}
