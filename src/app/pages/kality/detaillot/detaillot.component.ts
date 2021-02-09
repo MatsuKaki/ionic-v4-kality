@@ -1,9 +1,7 @@
 import { ViewChild, Component } from "@angular/core";
-import { NavigationExtras, Router } from "@angular/router";
+import { Router } from "@angular/router";
 import { IonSlides, Platform } from "@ionic/angular";
-import { Artisan, Reserve, reserves } from "./reserve.provider";
-import { Piece } from "./pieces.provider";
-import { CorpsDEtat, Entreprise } from "./carnetadresse.provider";
+import { Reserve, reserves } from "./reserve.provider";
 import * as L from "leaflet";
 import { MarkerClusterGroup } from "leaflet.markercluster";
 
