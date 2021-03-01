@@ -41,10 +41,6 @@ import { ResizeService } from "./size-detector/resize.service";
         component: CompteurComponent
       },
       {
-        path: "listereserves",
-        loadChildren: "./listereserves/listereserves.module#ListeReservesModule"
-      },
-      {
         path: "reserve/:id",
         component: ReserveComponent
       },

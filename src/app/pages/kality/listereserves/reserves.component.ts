@@ -39,4 +39,8 @@ export class ReservesComponent {
 
     await alert.present();
   }
+
+  removeItem() {
+    alert("Explication maquette : Item devrait maintenant etre ferme!");
+  }
 }
