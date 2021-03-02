@@ -50,7 +50,7 @@ import { ResizeService } from "./size-detector/resize.service";
         component: ImprimerListeComponent
       },
       {
-        path: "ed",
+        path: "editiondocuments",
         component: EditionDocumentsComponent
       }
     ])
