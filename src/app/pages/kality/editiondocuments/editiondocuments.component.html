@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-title>Operation 1</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar fill="solid" color="primary">
+    <ion-title
+      >13 rue du chat qui peche<br />
+      75005 Paris
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-split-pane contentId="main-content">
+  <ion-menu side="start" content-id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Liste des proprietaires</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item button>
+          <ion-label>
+            Herve MARTIN
+          </ion-label>
+          <ion-badge>4</ion-badge>
+        </ion-item>
+        <ion-item button>
+          <ion-label>
+            Marc DE CAFE
+          </ion-label>
+          <ion-badge>3</ion-badge>
+        </ion-item>
+        <ion-item button>
+          <ion-label>
+            Achille TALON
+          </ion-label>
+          <ion-badge>5</ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      <ion-buttons slot="start">
+        <ion-back-button
+          defaultHref="kality/lotlist"
+          text="Retour"
+          icon="arrow-back"
+        ></ion-back-button>
+      </ion-buttons>
+    </ion-footer>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-content padding
+      ><ion-list>
+        <ion-item button (click)="onOpen()">
+          <ion-label>
+            {{batiment}}001 - Herve MARTIN / 2 pieces
+            <p>01 XX XX XX XX</p>
+          </ion-label>
+          <ion-badge color="danger">0/11</ion-badge>
+        </ion-item>
+        <ion-item button (click)="onOpen()">
+          <ion-label>
+            {{batiment}}004 - Herve MARTIN / 2 pieces
+            <p>01 XX XX XX XX</p>
+          </ion-label>
+          <ion-badge color="success">21/23</ion-badge>
+        </ion-item>
+        <ion-item button (click)="onOpen()">
+          <ion-label>
+            {{batiment}}007 - Herve MARTIN / 2 pieces
+            <p>01 XX XX XX XX</p>
+          </ion-label>
+          <ion-badge color="warning">7/21</ion-badge>
+        </ion-item>
+        <ion-item button (click)="onOpen()">
+          <ion-label>
+            {{batiment}}010 - Herve MARTIN / 2 pieces
+            <p>01 XX XX XX XX</p>
+          </ion-label>
+          <ion-badge color="warning">4/7</ion-badge>
+        </ion-item>
+      </ion-list></ion-content
+    >
+  </div>
+</ion-split-pane>
+
+<ion-footer>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="kality/lotlist"
+        text="Retour"
+        icon="arrow-back"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
