@@ -9,7 +9,7 @@ import { LocataireComponent } from "../listereserves/locataire.component";
 import { AgenceComponent } from "../listereserves/agence.component";
 import { ReservesComponent } from "../listereserves/reserves.component";
 import { DetailLotComponent } from "./detaillot.component";
-import { PrintingOptionsComponent } from "./listereserves/p";
+import { PrintingOptionsComponent } from "../listereserves/printingoptions.component";
 
 @NgModule({
   imports: [
@@ -71,7 +71,8 @@ import { PrintingOptionsComponent } from "./listereserves/p";
     ReservesComponent,
     AcquereurComponent,
     AgenceComponent,
-    LocataireComponent
+    LocataireComponent,
+    PrintingOptionsComponent
   ],
   entryComponents: [PrintingOptionsComponent]
 })

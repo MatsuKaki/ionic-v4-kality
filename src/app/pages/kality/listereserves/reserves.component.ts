@@ -77,13 +77,13 @@ export class ReservesComponent {
   }
 
   async presentPopover(ev: any) {
-    const popover = await this.popoverController.create({
-      component: PrintingOptionsComponent,
-      cssClass: "my-custom-class",
-      event: ev,
-      translucent: true
-    });
-    return await popover.present();
+    popover = await popoverController.create({
+        component: 'popover-example-page',
+        event: ev,
+        translucent: true
+      });
+      currentPopover = popover;
+      return popover.present();
   }
 
   removeItem() {
