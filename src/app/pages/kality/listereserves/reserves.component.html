@@ -1,10 +1,17 @@
 <ion-toolbar>
-  <ion-title>
-    <ion-button (click)="presentAlertConfirm()">
-      <ion-icon slot="icon-only" name="print"></ion-icon>
+  <ion-buttons slot="start">
+    <ion-button (click)="presentPopover()">
+      <ion-icon slot="icon-only" name="download"></ion-icon>
     </ion-button>
-    Liste des réserves
+  </ion-buttons>
+  <ion-title size="small">
+    Liste des reserves
   </ion-title>
+  <ion-buttons slot="end">
+    <ion-button href="kality/imprimerliste">
+      <ion-icon slot="icon-only" name="eye"></ion-icon>
+    </ion-button>
+  </ion-buttons>
 </ion-toolbar>
 <ion-content padding>
   <ion-list>

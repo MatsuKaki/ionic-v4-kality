@@ -9,6 +9,7 @@ import { LocataireComponent } from "../listereserves/locataire.component";
 import { AgenceComponent } from "../listereserves/agence.component";
 import { ReservesComponent } from "../listereserves/reserves.component";
 import { DetailLotComponent } from "./detaillot.component";
+import { PrintingOptionsComponent } from "./listereserves/p";
 
 @NgModule({
   imports: [
@@ -71,6 +72,7 @@ import { DetailLotComponent } from "./detaillot.component";
     AcquereurComponent,
     AgenceComponent,
     LocataireComponent
-  ]
+  ],
+  entryComponents: [PrintingOptionsComponent]
 })
 export class DetailLotModule {}
