@@ -12,6 +12,7 @@ import { ReserveComponent } from "./reserve/reserve.component";
 import { CompteurComponent } from "./compteur/compteur.component";
 import { ImprimerListeComponent } from "./imprimerliste/imprimerliste.component";
 import { EditionDocumentsComponent } from "./editiondocuments/editiondocuments.component";
+import { HerveMartinComponent } from "./editiondocuments/hervemartin.component";
 
 import { SizeDetectorComponent } from "./size-detector/size-detector.component";
 import { ResizeService } from "./size-detector/resize.service";
@@ -52,6 +53,10 @@ import { ResizeService } from "./size-detector/resize.service";
       {
         path: "editiondocuments",
         component: EditionDocumentsComponent
+      },
+      {
+        path: "editiondocuments/hervemartin",
+        component: HerveMartinComponent
       }
     ])
   ],
@@ -61,7 +66,8 @@ import { ResizeService } from "./size-detector/resize.service";
     SizeDetectorComponent,
     CompteurComponent,
     ImprimerListeComponent,
-    EditionDocumentsComponent
+    EditionDocumentsComponent,
+    HerveMartinComponent
   ],
   providers: [ResizeService]
 })

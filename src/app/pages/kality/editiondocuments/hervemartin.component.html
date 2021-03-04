@@ -1,0 +1,72 @@
+<ion-header>
+	<ion-toolbar fill="solid" color="primary">
+		<ion-title>Operation 1<br />
+      Edition de documents OPR pour Herve MARTIN</ion-title>
+	</ion-toolbar>
+</ion-header>
+<ion-content padding>
+	<ion-list>
+		<ion-item-divider>
+			<ion-label>Generated today</ion-label>
+			<ion-button slot="end">Check All</ion-button>
+			<ion-button slot="end">Uncheck All</ion-button>
+		</ion-item-divider>
+		<ion-item>
+			<ion-checkbox slot="start" checked="true"></ion-checkbox>
+			<ion-label>
+				A001 - 2 pieces
+				<p>Liste générée le : 04/09/2021</p>
+				<p>[Si EDL]PV généré le : 04/09/2021</p>
+			</ion-label>
+		</ion-item>
+		<ion-item-divider>
+			<ion-label>Generated recently</ion-label>
+			<ion-button slot="end">Check All</ion-button>
+			<ion-button slot="end">Uncheck All</ion-button>
+		</ion-item-divider>
+		<ion-item>
+			<ion-checkbox slot="start"></ion-checkbox>
+			<ion-label>
+				A007 - 2 pieces
+				<p>Liste générée le : 03/09/2021</p>
+				<p>[Si EDL]PV généré le : 03/09/2021</p>
+			</ion-label>
+		</ion-item>
+		<ion-item>
+			<ion-checkbox slot="start"></ion-checkbox>
+			<ion-label>
+				A010 - 2 pieces
+				<p>Liste générée le : 01/09/2021</p>
+				<p>[Si EDL]PV généré le : 01/09/2021</p>
+			</ion-label>
+		</ion-item>
+		<ion-item-divider>
+			<ion-label>Older/Not generated</ion-label>
+			<ion-button slot="end">Check All</ion-button>
+			<ion-button slot="end">Uncheck All</ion-button>
+		</ion-item-divider>
+		<ion-item>
+			<ion-checkbox slot="start" disabled></ion-checkbox>
+			<ion-label>
+				A004 - 2 pieces
+				<p>Liste générée le : N/A</p>
+				<p>[Si EDL]PV généré le : N/A</p>
+			</ion-label>
+		</ion-item>
+	</ion-list>
+</ion-content>
+<ion-footer>
+	<ion-toolbar fill="solid" color="primary">
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="kality/editiondocuments" text="Retour" icon="arrow-back"></ion-back-button>
+		</ion-buttons>
+		<ion-buttons slot="primary">
+			<ion-button>
+				Signer
+			</ion-button>
+			<ion-button>
+				Imprimer
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-footer>
