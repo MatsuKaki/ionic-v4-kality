@@ -53,14 +53,14 @@ export class ReservesComponent {
           text: "Plans avec reserves",
           icon: "document",
           handler: () => {
-            console.log("Share clicked");
+            this.presentAlertConfirm();
           }
         },
         {
           text: "Tous les plans",
           icon: "file-tray-full-outline",
           handler: () => {
-            console.log("Play clicked");
+            this.presentAlertConfirm();
           }
         },
         {
@@ -74,16 +74,6 @@ export class ReservesComponent {
       ]
     });
     await actionSheet.present();
-  }
-
-  async presentPopover(ev: any) {
-    popover = await popoverController.create({
-        component: 'popover-example-page',
-        event: ev,
-        translucent: true
-      });
-      currentPopover = popover;
-      return popover.present();
   }
 
   removeItem() {

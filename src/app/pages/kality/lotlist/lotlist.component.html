@@ -1,70 +1,55 @@
 <ion-header>
-  <ion-toolbar fill="solid" color="primary">
-    <ion-title>Operation 1</ion-title>
-  </ion-toolbar>
-
-  <ion-toolbar fill="solid" color="primary">
-    <ion-title
-      >13 rue du chat qui peche<br />
+	<ion-toolbar fill="solid" color="primary">
+		<ion-title>Operation 1 <br />13 rue du chat qui peche<br />
       75005 Paris
     </ion-title>
-  </ion-toolbar>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-tabs>
-    <ion-tab-bar slot="top">
-      <ion-tab-button tab="batimentA">
-        <ion-label>Batiment A</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="batimentB">
-        <ion-label>Batiment B</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="batimentC">
-        <ion-label>Batiment C</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+	<ion-tabs>
+		<ion-tab-bar slot="top">
+			<ion-tab-button tab="batimentA">
+				<ion-label>Batiment A</ion-label>
+			</ion-tab-button>
+			<ion-tab-button tab="batimentB">
+				<ion-label>Batiment B</ion-label>
+			</ion-tab-button>
+			<ion-tab-button tab="batimentC">
+				<ion-label>Batiment C</ion-label>
+			</ion-tab-button>
+		</ion-tab-bar>
+	</ion-tabs>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar fill="solid" color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="kality" text="Retour" icon="arrow-back">
-      </ion-back-button>
-    </ion-buttons>
-    <ion-buttons slot="secondary">
-      <ion-select interface="popover">
-        <ion-select-option value="Tout" selected
-          >Toutes visites</ion-select-option
-        >
-        <ion-select-option value="TemoinTechnique"
-          >Temoin technique</ion-select-option
-        >
-        <ion-select-option value="PreVisite">Pre-Visite</ion-select-option>
-        <ion-select-option value="VAC">VAC</ion-select-option>
-        <ion-select-option value="OPR">OPR</ion-select-option>
-        <ion-select-option value="PreLivraison"
-          >Pre-Livraison</ion-select-option
-        >
-        <ion-select-option value="OPL">OPL</ion-select-option>
-        <ion-select-option value="MiseADisposition"
-          >Mise a disposition</ion-select-option
-        >
-        <ion-select-option value="EtatDesLieux"
-          >Etat des lieux</ion-select-option
-        >
-        <ion-select-option value="Production">Production</ion-select-option>
-        <ion-select-option value="VisiteA30J">Visite a 30 J</ion-select-option>
-        <ion-select-option value="GPA">GPA</ion-select-option>
-      </ion-select>
-      <ion-button href="kality/editiondocuments">
-        Edition documents
-      </ion-button>
-      <ion-button (click)="onSynchronize()">
-        <ion-icon slot="end" name="refresh"></ion-icon>
-        Synchronisation
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+	<ion-toolbar fill="solid" color="primary">
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="kality" text="Retour" icon="arrow-back">
+			</ion-back-button>
+		</ion-buttons>
+		<ion-buttons slot="secondary">
+			<ion-select interface="popover">
+				<ion-select-option value="Tout" selected>Toutes visites</ion-select-option>
+				<ion-select-option value="TemoinTechnique">Temoin technique</ion-select-option>
+				<ion-select-option value="PreVisite">Pre-Visite</ion-select-option>
+				<ion-select-option value="VAC">VAC</ion-select-option>
+				<ion-select-option value="OPR">OPR</ion-select-option>
+				<ion-select-option value="PreLivraison">Pre-Livraison</ion-select-option>
+				<ion-select-option value="OPL">OPL</ion-select-option>
+				<ion-select-option value="MiseADisposition">Mise a disposition</ion-select-option>
+				<ion-select-option value="EtatDesLieux">Etat des lieux</ion-select-option>
+				<ion-select-option value="Production">Production</ion-select-option>
+				<ion-select-option value="VisiteA30J">Visite a 30 J</ion-select-option>
+				<ion-select-option value="GPA">GPA</ion-select-option>
+			</ion-select>
+			<ion-button href="kality/editiondocuments">
+				Edition documents
+			</ion-button>
+			<ion-button (click)="onSynchronize()">
+				<ion-icon slot="end" name="refresh"></ion-icon>
+				Synchronisation
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
 </ion-footer>
