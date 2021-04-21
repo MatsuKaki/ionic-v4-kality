@@ -45,23 +45,85 @@ export class ReservesComponent {
     await alert.present();
   }
 
-  async presentActionSheet() {
+  async presentPVAlertConfirm() {
+    console.log("Print clicked");
+    const alert = await this.alertController.create({
+      cssClass: "my-custom-class",
+      header: "Attention",
+      message:
+        "Un PV existant a été détecté. Si vous continuez, il sera remplacé.",
+      buttons: [
+        {
+          text: "Annuler",
+          role: "cancel",
+          cssClass: "secondary",
+          handler: () => {
+            console.log("Confirm Cancel: blah");
+          }
+        },
+        {
+          text: "Continuer",
+          handler: () => {
+            this.router.navigate(["kality/pvinfo"]);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async presentGenerateActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       header: "Generation option",
       buttons: [
         {
-          text: "Plans avec reserves",
+          text: "Liste des réserves",
           icon: "document",
           handler: () => {
             this.presentAlertConfirm();
           }
         },
         {
-          text: "Tous les plans",
+          text: "Liste des réserves - Tous les plans",
           icon: "file-tray-full-outline",
           handler: () => {
             this.presentAlertConfirm();
           }
+        },
+        {
+          text: "PV",
+          icon: "document",
+          handler: () => {
+            this.presentPVAlertConfirm();
+          }
+        },
+        {
+          text: "Annuler",
+          icon: "close",
+          role: "cancel",
+          handler: () => {
+            console.log("Cancel clicked");
+          }
+        }
+      ]
+    });
+    await actionSheet.present();
+  }
+
+  async presentOpenActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: "Document to open",
+      buttons: [
+        {
+          text: "Liste des réserves",
+          icon: "document",
+          href: "kality/imprimerliste"
+        },
+        {
+          text: "PV",
+          icon: "document",
+          href: "kality/imprimerpv"
         },
         {
           text: "Annuler",

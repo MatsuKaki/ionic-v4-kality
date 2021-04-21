@@ -12,6 +12,7 @@ import { ReserveComponent } from "./reserve/reserve.component";
 import { CompteurComponent } from "./compteur/compteur.component";
 import { SoldeComponent } from "./solde/solde.component";
 import { ClesComponent } from "./cles/cles.component";
+import { PVInfoComponent } from "./pvinfo/pvinfo.component";
 import { ImprimerListeComponent } from "./imprimerliste/imprimerliste.component";
 import { EditionDocumentsComponent } from "./editiondocuments/editiondocuments.component";
 import { HerveMartinComponent } from "./editiondocuments/hervemartin.component";
@@ -61,6 +62,10 @@ import { ResizeService } from "./size-detector/resize.service";
         component: ImprimerListeComponent
       },
       {
+        path: "pvinfo",
+        component: PVInfoComponent
+      },
+      {
         path: "editiondocuments",
         component: EditionDocumentsComponent
       },
@@ -77,6 +82,7 @@ import { ResizeService } from "./size-detector/resize.service";
     CompteurComponent,
     SoldeComponent,
     ClesComponent,
+    SoldeComponent,
     ImprimerListeComponent,
     EditionDocumentsComponent,
     HerveMartinComponent
