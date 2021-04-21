@@ -1,10 +1,17 @@
 import { Component } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "pvinfo-component",
   templateUrl: "./pvinfo.component.html"
 })
 export class PVInfoComponent {
-  constructor() {}
+  public signatureDate: Date;
+  public possessionDate: Date;
+  public currDate: Date;
+
+  constructor() {
+    this.signatureDate = new Date();
+    this.possessionDate = new Date();
+    this.currDate = new Date();
+  }
 }

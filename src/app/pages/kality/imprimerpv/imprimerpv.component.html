@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-title>Operation 1 - A001 - 2 Pieces - Herve MARTIN</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <pdf-viewer style="display: block;" [src]="pdfSource" [original-size]="false"></pdf-viewer>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="kality/detaillot" text="Retour" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        Signer
+      </ion-button>
+      <ion-button>
+        Imprimer
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Operation 1 - A001 - 2 Pieces - Herve MARTIN</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Inventaire des clés</ion-label>
+      <ion-toggle checked="true"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Relevé des compteurs</ion-label>
+      <ion-toggle checked="true"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Attestation d'achèvement des travaux</ion-label>
+      <ion-toggle checked="true"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>H1/H2?</ion-label>
+      <ion-select interface="popover" value="none">
+        <ion-select-option value="none">Aucun</ion-select-option>
+        <ion-select-option value="H1">H1 (maison)</ion-select-option>
+        <ion-select-option value="H2">H2 (collectif)</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Diagnostic de performance énergétique (DPE)</ion-label>
+      <ion-toggle checked="true"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Attestation RT2012</ion-label>
+      <ion-toggle checked="true"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Autre(s) document(s)</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+    <ion-item>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="kality/pvinfo" text="Retour" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button href="kality/imprimerpv">
+        Générer
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

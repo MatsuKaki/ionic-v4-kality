@@ -27,11 +27,11 @@
     </ion-item>
     <ion-item>
       <ion-label position="stacked">Date de signature</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-datetime value="{{currDate}}" displayFormat="DD MMMM YYYY à HH:mm"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label position="stacked">Date de prise de possession</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-datetime value="{{currDate}}" displayFormat="DD MMMM YYYY à HH:mm"></ion-datetime>
     </ion-item>
   </ion-list>
 </ion-content>
@@ -42,8 +42,8 @@
       <ion-back-button defaultHref="kality/detaillot" text="Retour" icon="arrow-back"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="primary">
-      <ion-button href="kality/pvdocuments">
-        Suivant
+      <ion-button href="kality/pvdocuments" icon="arrow-forward">
+        Sélection des annexes
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
