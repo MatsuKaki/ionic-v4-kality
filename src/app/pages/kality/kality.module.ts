@@ -15,6 +15,7 @@ import { ClesComponent } from "./cles/cles.component";
 import { PVInfoComponent } from "./pvinfo/pvinfo.component";
 import { PVDocumentsComponent } from "./pvdocuments/pvdocuments.component";
 import { ImprimerListeComponent } from "./imprimerliste/imprimerliste.component";
+import { ImprimerPVComponent } from "./imprimerpv/imprimerpv.component";
 import { EditionDocumentsComponent } from "./editiondocuments/editiondocuments.component";
 import { HerveMartinComponent } from "./editiondocuments/hervemartin.component";
 
@@ -63,6 +64,10 @@ import { ResizeService } from "./size-detector/resize.service";
         component: ImprimerListeComponent
       },
       {
+        path: "imprimerpv",
+        component: ImprimerPVComponent
+      },
+      {
         path: "pvinfo",
         component: PVInfoComponent
       },
@@ -90,6 +95,7 @@ import { ResizeService } from "./size-detector/resize.service";
     PVInfoComponent,
     PVDocumentsComponent,
     ImprimerListeComponent,
+    ImprimerPVComponent,
     EditionDocumentsComponent,
     HerveMartinComponent
   ],

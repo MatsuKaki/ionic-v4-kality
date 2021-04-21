@@ -118,12 +118,16 @@ export class ReservesComponent {
         {
           text: "Liste des réserves",
           icon: "document",
-          href: "kality/imprimerliste"
+          handler: () => {
+            this.router.navigate(["kality/imprimerliste"]);
+          }
         },
         {
           text: "PV",
           icon: "document",
-          href: "kality/imprimerpv"
+          handler: () => {
+            this.router.navigate(["kality/imprimerpv"]);
+          }
         },
         {
           text: "Annuler",
