@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Operation 1 - A001 - 2 Pieces - Herve MARTIN</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-divider color="secondary">
+      <ion-label>
+        Restant dû
+      </ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label position="stacked">Solde Acquisition</ion-label>
+      <ion-input type="number" inputmode="decimal"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Solde autres options</ion-label>
+      <ion-input type="number" inputmode="decimal"></ion-input>
+    </ion-item>
+    <ion-item-divider color="secondary">
+      <ion-label>
+        Virement
+      </ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label>Solde réglé par virement</ion-label>
+      <ion-checkbox [(ngModel)]="carnetDAdresseOnly"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Date</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY"></ion-datetime>
+    </ion-item>
+    <ion-item-divider color="secondary">
+      <ion-label>
+        Chèques
+      </ion-label>
+      <ion-button slot="end" shape="round" size="small" (click)="addCheque()">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button slot="end" shape="round" size="small" (click)="removeCheque()">
+        <ion-icon name="remove-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item-divider>
+    <ng-template ngFor let-currentArtisan [ngForOf]="cheques" let-index="index">
+      <ion-item-divider color="tertiary">
+        <ion-label>
+          Chèque {{index +1}}
+        </ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label position="stacked">Montant</ion-label>
+        <ion-input type="number" inputmode="decimal"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Numéro</ion-label>
+        <ion-input type="number" inputmode="decimal"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Nom de la banque</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+    </ng-template>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="kality/detaillot" text="Retour" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

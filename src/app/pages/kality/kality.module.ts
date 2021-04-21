@@ -10,6 +10,7 @@ import { PdfViewerModule } from "ng2-pdf-viewer";
 import { OperationComponent } from "./operation/operation.component";
 import { ReserveComponent } from "./reserve/reserve.component";
 import { CompteurComponent } from "./compteur/compteur.component";
+import { SoldeComponent } from "./solde/solde.component";
 import { ImprimerListeComponent } from "./imprimerliste/imprimerliste.component";
 import { EditionDocumentsComponent } from "./editiondocuments/editiondocuments.component";
 import { HerveMartinComponent } from "./editiondocuments/hervemartin.component";
@@ -43,6 +44,10 @@ import { ResizeService } from "./size-detector/resize.service";
         component: CompteurComponent
       },
       {
+        path: "solde",
+        component: SoldeComponent
+      },
+      {
         path: "reserve/:id",
         component: ReserveComponent
       },
@@ -65,6 +70,7 @@ import { ResizeService } from "./size-detector/resize.service";
     ReserveComponent,
     SizeDetectorComponent,
     CompteurComponent,
+    SoldeComponent,
     ImprimerListeComponent,
     EditionDocumentsComponent,
     HerveMartinComponent
