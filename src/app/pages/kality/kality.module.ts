@@ -11,6 +11,7 @@ import { OperationComponent } from "./operation/operation.component";
 import { ReserveComponent } from "./reserve/reserve.component";
 import { CompteurComponent } from "./compteur/compteur.component";
 import { SoldeComponent } from "./solde/solde.component";
+import { ClesComponent } from "./cles/cles.component";
 import { ImprimerListeComponent } from "./imprimerliste/imprimerliste.component";
 import { EditionDocumentsComponent } from "./editiondocuments/editiondocuments.component";
 import { HerveMartinComponent } from "./editiondocuments/hervemartin.component";
@@ -48,6 +49,10 @@ import { ResizeService } from "./size-detector/resize.service";
         component: SoldeComponent
       },
       {
+        path: "cles",
+        component: ClesComponent
+      },
+      {
         path: "reserve/:id",
         component: ReserveComponent
       },
@@ -71,6 +76,7 @@ import { ResizeService } from "./size-detector/resize.service";
     SizeDetectorComponent,
     CompteurComponent,
     SoldeComponent,
+    ClesComponent,
     ImprimerListeComponent,
     EditionDocumentsComponent,
     HerveMartinComponent
