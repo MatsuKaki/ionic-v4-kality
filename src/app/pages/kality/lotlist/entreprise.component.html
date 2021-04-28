@@ -1,0 +1,51 @@
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Entreprise</ion-label>
+      <ionic-selectable [items]="myEntreprises" itemValueField="id" itemTextField="name" [canSearch]="true">
+      </ionic-selectable>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Statut</ion-label>
+      <ion-select interface="popover" value="None">
+        <ion-select-option value="Ouvertes">Ouvertes</ion-select-option>
+        <ion-select-option value="En Cours">En Cours</ion-select-option>
+        <ion-select-option value="OK MOE">OK MOE</ion-select-option>
+        <ion-select-option value="None">Tous</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Type de visite</ion-label>
+      <ion-select interface="popover">
+        <ion-select-option value="Tout" selected>Toutes visites</ion-select-option>
+        <ion-select-option value="TemoinTechnique">Temoin technique</ion-select-option>
+        <ion-select-option value="PreVisite">Pre-Visite</ion-select-option>
+        <ion-select-option value="VAC">VAC</ion-select-option>
+        <ion-select-option value="OPR">OPR</ion-select-option>
+        <ion-select-option value="PreLivraison">Pre-Livraison</ion-select-option>
+        <ion-select-option value="OPL">OPL</ion-select-option>
+        <ion-select-option value="MiseADisposition">Mise a disposition</ion-select-option>
+        <ion-select-option value="EtatDesLieux">Etat des lieux</ion-select-option>
+        <ion-select-option value="Production">Production</ion-select-option>
+        <ion-select-option value="VisiteA30J">Visite a 30 J</ion-select-option>
+        <ion-select-option value="GPA">GPA</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="kality" text="Retour" icon="arrow-back">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button href="kality/lotlist/entreprise/resultat">
+        Rechercher
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

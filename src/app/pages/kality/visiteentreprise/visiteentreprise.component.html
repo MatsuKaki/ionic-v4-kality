@@ -1,0 +1,198 @@
+<ion-split-pane contentId="main-content">
+  <ion-menu side="end" content-id="main-content">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="presentGenerateActionSheet()">
+          <ion-icon slot="icon-only" name="download"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title size="small">
+        Liste des reserves
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="presentOpenActionSheet()">
+          <ion-icon slot="icon-only" name="eye"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-content padding>
+      <ion-list>
+        <ion-list-header>
+          Séjour
+        </ion-list-header>
+        <ion-item-sliding>
+          <ion-item href="./kality/reserve/1">
+            <ion-avatar slot="start">
+              <ion-label color="warning">
+                A1
+              </ion-label>
+            </ion-avatar>
+            <ion-label class="ion-text-wrap">
+              <h2>Rayure sur le parquet à poncer</h2>
+              <h3>Revêtement de sols souples - TOULESOL</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end" (ionSwipe)="removeItem()">
+            <ion-item-option expandable (click)="removeItem()">Fermer</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-list-header>
+          Salle de bains 1
+        </ion-list-header>
+        <ion-item-sliding>
+          <ion-item href="./kality/reserve/2">
+            <ion-avatar slot="start">
+              <ion-label color="warning">
+                B2
+              </ion-label>
+            </ion-avatar>
+            <ion-label class="ion-text-wrap">
+              <h2>Coulures de peinture</h2>
+              <h3>Peinture intérieure - Peinture de Paris</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end" (ionSwipe)="removeItem()">
+            <ion-item-option expandable (click)="removeItem()">Fermer</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-list-header>
+          Chambre 3
+        </ion-list-header>
+        <ion-item-sliding>
+          <ion-item href="./kality/reserve/3">
+            <ion-avatar slot="start">
+              <ion-label color="success">
+                C3
+              </ion-label>
+            </ion-avatar>
+            <ion-label class="ion-text-wrap">
+              <h2>Manque stop-porte</h2>
+              <h3>Portes et fenêtres - Mensuiserie Gérard</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end" (ionSwipe)="removeItem()">
+            <ion-item-option expandable (click)="removeItem()">Fermer</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+          <ion-item href="./kality/reserve/4">
+            <ion-avatar slot="start">
+              <ion-label color="success">
+                C4
+              </ion-label>
+            </ion-avatar>
+            <ion-label class="ion-text-wrap">
+              <h2>Plinthe qui se décolle</h2>
+              <h3>Menuiserie intérieure - Mensuiserie Gérard</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end" (ionSwipe)="removeItem()">
+            <ion-item-option expandable (click)="removeItem()">Fermer</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-label color="warning">
+                B5
+              </ion-label>
+            </ion-avatar>
+            <ion-label class="ion-text-wrap">
+              <h2>Carreau fendu sur le sol</h2>
+              <h3>Carrelage - Les carreleurs bretons</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end" (ionSwipe)="removeItem()">
+            <ion-item-option expandable (click)="removeItem()">Fermer</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-label color="success">
+                B6
+              </ion-label>
+            </ion-avatar>
+            <ion-label class="ion-text-wrap">
+              <h2>Manque stop-porte</h2>
+              <h3>Portes et fenêtres - Mensuiserie Gérard</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end" (ionSwipe)="removeItem()">
+            <ion-item-option expandable (click)="removeItem()">Fermer</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-label color="warning">
+                B7
+              </ion-label>
+            </ion-avatar>
+            <ion-label class="ion-text-wrap">
+              <h2>Carreau fendu sur le sol</h2>
+              <h3>Carrelage - Les carreleurs bretons</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end" (ionSwipe)="removeItem()">
+            <ion-item-option expandable (click)="removeItem()">Fermer</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-label color="warning">
+                B8
+              </ion-label>
+            </ion-avatar>
+            <ion-label class="ion-text-wrap">
+              <h2>Carreau fendu sur le sol</h2>
+              <h3>Carrelage - Les carreleurs bretons</h3>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end" (ionSwipe)="removeItem()">
+            <ion-item-option expandable (click)="removeItem()">Fermer</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar fill="solid" color="primary">
+        <ion-buttons slot="end">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Operation 1 - A001 - 2 Pieces - Herve MARTIN</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content padding>
+      <ion-slides #swiper pager="true" [options]="slideOpts" zoom="true">
+        <ion-slide>
+          <div id="map1" style="width : 100%" [style.height.px]="height"></div>
+        </ion-slide>
+        <ion-slide>
+          <div id="map2" style="width : 100%" [style.height.px]="height"></div>
+        </ion-slide>
+        <ion-slide>
+          <div id="map3" style="width : 100%" [style.height.px]="height"></div>
+        </ion-slide>
+      </ion-slides>
+    </ion-content>
+    <ion-footer>
+      <ion-toolbar fill="solid" color="primary">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="kality/lotlist/entreprise" text="Retour" icon="arrow-back"></ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-select interface="popover">
+            <ion-select-option value="A001" selected>A001 - 2 Pieces - Herve MARTIN [4]</ion-select-option>
+            <ion-select-option value="A002">A002 - Achille TALON / 2 pieces / 257 [32]</ion-select-option>
+            <ion-select-option value="A003">A003 - Marc DE CAFE / 2 pieces / 258 [17]</ion-select-option>
+            <ion-select-option value="A004">A004 - Herve MARTIN / 2 pieces [23]</ion-select-option>
+          </ion-select>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+  </div>
+</ion-split-pane>
