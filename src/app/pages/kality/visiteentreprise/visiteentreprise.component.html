@@ -6,7 +6,7 @@
           Séjour
         </ion-list-header>
         <ion-item-sliding>
-          <ion-item href="./kality/reserve/1">
+          <ion-item href="./kality/reserveentreprise/1">
             <ion-avatar slot="start">
               <ion-label color="warning">
                 A1
@@ -25,7 +25,7 @@
           Salle de bains 1
         </ion-list-header>
         <ion-item-sliding>
-          <ion-item href="./kality/reserve/2">
+          <ion-item href="./kality/reserveentreprise/2">
             <ion-avatar slot="start">
               <ion-label color="warning">
                 B2
@@ -44,7 +44,7 @@
           Chambre 3
         </ion-list-header>
         <ion-item-sliding>
-          <ion-item href="./kality/reserve/3">
+          <ion-item href="./kality/reserveentreprise/3">
             <ion-avatar slot="start">
               <ion-label color="success">
                 C3
@@ -60,7 +60,7 @@
           </ion-item-options>
         </ion-item-sliding>
         <ion-item-sliding>
-          <ion-item href="./kality/reserve/4">
+          <ion-item href="./kality/reserveentreprise/4">
             <ion-avatar slot="start">
               <ion-label color="success">
                 C4
@@ -167,7 +167,16 @@
     <ion-footer>
       <ion-toolbar fill="solid" color="primary">
         <ion-buttons slot="start">
-          <ion-back-button defaultHref="kality/lotlist/entreprise/" text="Retour" icon="arrow-back"></ion-back-button>
+          <ion-back-button defaultHref="kality/lotlist/entreprise/resultat" text="Retour" icon="arrow-back">
+          </ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon slot="start" name="arrow-back"></ion-icon>Lot Précédent
+          </ion-button>
+          <ion-button>
+            <ion-icon slot="end" name="arrow-forward"></ion-icon>Lot Suivant
+          </ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-footer>

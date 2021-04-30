@@ -19,6 +19,7 @@ import { ImprimerPVComponent } from "./imprimerpv/imprimerpv.component";
 import { EditionDocumentsComponent } from "./editiondocuments/editiondocuments.component";
 import { HerveMartinComponent } from "./editiondocuments/hervemartin.component";
 import { VisiteEntrepriseComponent } from "./visiteentreprise/visiteentreprise.component";
+import { ReserveEntrepriseComponent } from "./reserve/reserveentreprise.component";
 
 import { SizeDetectorComponent } from "./size-detector/size-detector.component";
 import { ResizeService } from "./size-detector/resize.service";
@@ -87,6 +88,10 @@ import { ResizeService } from "./size-detector/resize.service";
       {
         path: "visiteentreprise",
         component: VisiteEntrepriseComponent
+      },
+      {
+        path: "reserveentreprise/:id",
+        component: ReserveEntrepriseComponent
       }
     ])
   ],
@@ -103,7 +108,8 @@ import { ResizeService } from "./size-detector/resize.service";
     ImprimerPVComponent,
     EditionDocumentsComponent,
     HerveMartinComponent,
-    VisiteEntrepriseComponent
+    VisiteEntrepriseComponent,
+    ReserveEntrepriseComponent
   ],
   providers: [ResizeService]
 })

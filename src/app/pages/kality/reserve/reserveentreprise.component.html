@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Operation 1 - A001 - 2 Pieces - Herve MARTIN</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="4">
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Piece</ion-label>
+            <ionic-selectable [(ngModel)]="reserve.piece" [items]="matchingPieces" itemValueField="id"
+              itemTextField="name" [canSearch]="true" (onChange)="pieceChange($event)"
+              (onSearch)="searchPieces($event)"></ionic-selectable>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Statut</ion-label>
+            <ion-select interface="popover" [(ngModel)]="reserve.statut">
+              <ion-select-option value="En cours">En cours</ion-select-option>
+              <ion-select-option value="OK MOE">OK MOE</ion-select-option>
+              <ion-select-option value="Levee">Levee</ion-select-option>
+              <ion-select-option value="Annulee">Annulee</ion-select-option>
+              <ion-select-option value="Refusee">Refusee</ion-select-option>
+              <ion-select-option value="Mise en Demeure">Mise en Demeure</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Description</ion-label>
+            <ion-textarea placeholder="Description" rows="3" [(ngModel)]="reserve.description">
+            </ion-textarea>
+          </ion-item>
+          <ion-item-divider color="secondary">
+            <ion-label>
+              Intervenants
+            </ion-label>
+            <ion-button slot="end" shape="round" size="small" (click)="addArtisan()">
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-button>
+            <ion-button slot="end" shape="round" size="small" (click)="removeArtisan()">
+              <ion-icon name="remove-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-item-divider>
+          <ion-item>
+            <ion-label>Limiter au carnet</ion-label>
+            <ion-checkbox [(ngModel)]="carnetDAdresseOnly"></ion-checkbox>
+          </ion-item>
+          <ng-template ngFor let-currentArtisan [ngForOf]="reserve.artisans" let-index="index">
+            <ion-item>
+              <ion-label position="stacked">Corps d'etat {{index +1}}</ion-label>
+              <ionic-selectable [(ngModel)]="currentArtisan.corpsDEtat" [items]="matchingCorpsDEtat[index]"
+                itemValueField="id" itemTextField="name" [canSearch]="true" (onChange)="corpsDEtatChange($event, index)"
+                (onSearch)="searchCorpsDEtat($event, index)"></ionic-selectable>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Entreprise {{index +1 }}</ion-label>
+              <ion-select interface="popover" [(ngModel)]="currentArtisan.entreprise">
+                <ion-select-option *ngFor="let entreprise of matchingEntreprises[index]" [value]="entreprise">
+                  {{entreprise.name}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ng-template>
+          <ion-item-divider color="secondary">
+            <ion-label>
+              Informations Additionnelles
+            </ion-label>
+          </ion-item-divider>
+          <ion-item>
+            <ion-textarea placeholder="Informations Additionnelles" rows="3" [(ngModel)]="reserve.infoAdditionnelles">
+            </ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Creation</ion-label>
+            {{reserve.dateCreation}}
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Modification</ion-label>
+            {{reserve.dateModification}}
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Validation OR</ion-label>
+            {{reserve.dateValidationOR}}
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Cloture</ion-label>
+            {{reserve.dateCloture}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col size="12" size-sm="8">
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let picture of reserve.images" size="2">
+              <ion-thumbnail>
+                <img src="{{picture}}" />
+              </ion-thumbnail>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div id="map" style="width : 100%; height : 500px;"></div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar fill="solid" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="kality/visiteentreprise" text="Retour" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="start" name="arrow-back"></ion-icon>Réserve précédente
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="end" name="arrow-forward"></ion-icon>Réserve Suivante
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        Photo
+      </ion-button>
+      <ion-button>
+        Sauver
+      </ion-button>
+      <ion-button>
+        Supprimer
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

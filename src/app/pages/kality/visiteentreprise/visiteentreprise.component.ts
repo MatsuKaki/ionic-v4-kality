@@ -115,6 +115,8 @@ export class VisiteEntrepriseComponent {
   }
 
   openReserve(marker: L.Marker) {
-    this.router.navigate(["kality/reserve/" + marker.options["reserveId"]]);
+    this.router.navigate([
+      "kality/reserveentreprise/" + marker.options["reserveId"]
+    ]);
   }
 }
