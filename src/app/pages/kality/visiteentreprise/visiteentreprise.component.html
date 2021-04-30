@@ -1,20 +1,5 @@
 <ion-split-pane contentId="main-content">
   <ion-menu side="end" content-id="main-content">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-button (click)="presentGenerateActionSheet()">
-          <ion-icon slot="icon-only" name="download"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-      <ion-title size="small">
-        Liste des reserves
-      </ion-title>
-      <ion-buttons slot="end">
-        <ion-button (click)="presentOpenActionSheet()">
-          <ion-icon slot="icon-only" name="eye"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
     <ion-content padding>
       <ion-list>
         <ion-list-header>
@@ -182,15 +167,7 @@
     <ion-footer>
       <ion-toolbar fill="solid" color="primary">
         <ion-buttons slot="start">
-          <ion-back-button defaultHref="kality/lotlist/entreprise" text="Retour" icon="arrow-back"></ion-back-button>
-        </ion-buttons>
-        <ion-buttons slot="end">
-          <ion-select interface="popover">
-            <ion-select-option value="A001" selected>A001 - 2 Pieces - Herve MARTIN [4]</ion-select-option>
-            <ion-select-option value="A002">A002 - Achille TALON / 2 pieces / 257 [32]</ion-select-option>
-            <ion-select-option value="A003">A003 - Marc DE CAFE / 2 pieces / 258 [17]</ion-select-option>
-            <ion-select-option value="A004">A004 - Herve MARTIN / 2 pieces [23]</ion-select-option>
-          </ion-select>
+          <ion-back-button defaultHref="kality/lotlist/entreprise/" text="Retour" icon="arrow-back"></ion-back-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-footer>
